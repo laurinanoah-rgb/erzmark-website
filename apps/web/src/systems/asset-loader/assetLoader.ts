@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { GLTFLoader, type GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export interface AssetProgress {
   loaded: number;
@@ -16,6 +17,7 @@ type ProgressListener = (progress: AssetProgress) => void;
  */
 export class AssetLoader {
   readonly manager = new THREE.LoadingManager();
+  private gltfLoader = new GLTFLoader(this.manager);
   private cache = new Map<string, unknown>();
   private progressListeners = new Set<ProgressListener>();
 
@@ -24,6 +26,23 @@ export class AssetLoader {
       const progress: AssetProgress = { loaded, total, fraction: total > 0 ? loaded / total : 1 };
       for (const listener of this.progressListeners) listener(progress);
     };
+  }
+
+  loadGLTF(url: string): Promise<GLTF> {
+    const cached = this.getCached<GLTF>(url);
+    if (cached) return Promise.resolve(cached);
+
+    return new Promise((resolve, reject) => {
+      this.gltfLoader.load(
+        url,
+        (gltf) => {
+          this.setCached(url, gltf);
+          resolve(gltf);
+        },
+        undefined,
+        reject,
+      );
+    });
   }
 
   onProgress(listener: ProgressListener) {
