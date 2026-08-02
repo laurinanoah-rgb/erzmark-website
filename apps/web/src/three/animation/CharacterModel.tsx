@@ -69,6 +69,12 @@ export function CharacterModel() {
       actionsRef.current = actions;
 
       skinMaterialRef.current = findSkinMaterial(loaded.scene);
+      loaded.scene.traverse((node) => {
+        if (node instanceof THREE.Mesh) {
+          node.castShadow = true;
+          node.receiveShadow = true;
+        }
+      });
 
       setGltf(loaded);
     });

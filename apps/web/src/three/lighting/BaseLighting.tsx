@@ -37,11 +37,32 @@ export function BaseLighting() {
 
   return (
     <>
-      <ambientLight intensity={0.18} color="#1a2440" />
+      <ambientLight intensity={0.26} color="#212c4a" />
       {/* Kaltes, gedaempftes Mondlicht-Fuellicht von schraeg oben-vorne, damit Gesicht/Koerper
           nicht ausschliesslich von unten durchs Feuer beleuchtet werden. */}
-      <directionalLight position={[2, 4, 4]} intensity={0.3} color="#5f7bb8" />
-      <pointLight ref={fireLightRef} position={[0, 0.35, 0.3]} color="#ff8a3d" intensity={2.0} distance={8} decay={2} />
+      <directionalLight
+        position={[2, 4, 4]}
+        intensity={0.45}
+        color="#5f7bb8"
+        castShadow
+        shadow-mapSize={[1024, 1024]}
+        shadow-camera-left={-6}
+        shadow-camera-right={6}
+        shadow-camera-top={6}
+        shadow-camera-bottom={-6}
+        shadow-bias={-0.0025}
+      />
+      <pointLight
+        ref={fireLightRef}
+        position={[0, 0.35, 0.3]}
+        color="#ff8a3d"
+        intensity={2.0}
+        distance={8}
+        decay={2}
+        castShadow
+        shadow-mapSize={[512, 512]}
+        shadow-bias={-0.004}
+      />
     </>
   );
 }

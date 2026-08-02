@@ -17,7 +17,14 @@ function CampfireBase() {
   useEffect(() => {
     let cancelled = false;
     assetLoader.loadGLTF(CAMPFIRE_BASE_MODEL_URL).then((gltf) => {
-      if (!cancelled) setScene(gltf.scene);
+      if (cancelled) return;
+      gltf.scene.traverse((node) => {
+        if (node instanceof THREE.Mesh) {
+          node.castShadow = true;
+          node.receiveShadow = true;
+        }
+      });
+      setScene(gltf.scene);
     });
     return () => {
       cancelled = true;

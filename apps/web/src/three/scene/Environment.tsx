@@ -5,6 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { assetLoader } from "@/systems/asset-loader";
 import { useWeather } from "@/hooks/useWeather";
+import { moonMeshRef } from "@/three/effects/sceneRefs";
 
 const TREES_URL = "/models/trees.glb";
 const RUNE_URL = "/textures/rune-circle.png";
@@ -46,6 +47,14 @@ function Trees() {
       if (cancelled) return;
       const a = gltf.scene.getObjectByName("Tree_Pine_A");
       const b = gltf.scene.getObjectByName("Tree_Pine_B");
+      for (const tree of [a, b]) {
+        tree?.traverse((node) => {
+          if (node instanceof THREE.Mesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+          }
+        });
+      }
       if (a && b) setVariants([a, b]);
     });
     return () => {
@@ -72,9 +81,9 @@ function Trees() {
 
 function Moon() {
   return (
-    <mesh position={[6, 9, -12]}>
+    <mesh ref={moonMeshRef} position={[6, 9, -12]}>
       <circleGeometry args={[1.2, 32]} />
-      <meshStandardMaterial color="#d8dcf0" emissive="#c0c8ff" emissiveIntensity={1.8} toneMapped={false} />
+      <meshBasicMaterial color="#dfe4ff" toneMapped={false} />
     </mesh>
   );
 }
