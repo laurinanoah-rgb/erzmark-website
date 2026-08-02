@@ -6,6 +6,7 @@ import { Billboard } from "@react-three/drei";
 import * as THREE from "three";
 import { useWeather } from "@/hooks/useWeather";
 import { assetLoader } from "@/systems/asset-loader";
+import { EmberParticles } from "@/three/particles/EmberParticles";
 
 const CAMPFIRE_BASE_MODEL_URL = "/models/campfire-base.glb";
 
@@ -113,6 +114,7 @@ export function Campfire() {
     <group>
       <CampfireBase />
       <FireSprite />
+      <EmberParticles />
     </group>
   );
 }

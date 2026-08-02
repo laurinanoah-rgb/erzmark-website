@@ -16,6 +16,10 @@ import {
 import { BlendFunction } from "postprocessing";
 import { Vector2 } from "three";
 import { moonMeshRef } from "@/three/effects/sceneRefs";
+import { HeatHaze } from "@/three/effects/HeatHaze";
+
+// Ungefaehre Bildschirmposition der Feuerstelle bei statischer Kamera (siehe CameraRig.tsx).
+const FIRE_SCREEN_POSITION = new Vector2(0.5, 0.12);
 
 /**
  * Zentrale Filmlook-Pipeline (VISION.md: "kinoreif" statt "Website"). Bloom fuer
@@ -32,8 +36,9 @@ export function PostProcessing() {
 
   return (
     <EffectComposer multisampling={4}>
+      <HeatHaze uFirePos={FIRE_SCREEN_POSITION} uStrength={0.004} />
       <N8AO aoRadius={0.6} intensity={2.2} distanceFalloff={1} halfRes />
-      <Bloom mipmapBlur luminanceThreshold={0.55} luminanceSmoothing={0.25} intensity={0.85} radius={0.8} />
+      <Bloom mipmapBlur luminanceThreshold={0.78} luminanceSmoothing={0.2} intensity={0.5} radius={0.45} />
       {moonReady ? (
         <GodRays
           sun={moonMeshRef as never}

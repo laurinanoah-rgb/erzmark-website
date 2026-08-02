@@ -63,6 +63,11 @@ export function BaseLighting() {
         shadow-mapSize={[512, 512]}
         shadow-bias={-0.004}
       />
+      {/* Zweites, schattenloses Bodenglut-Licht: tiefer + weiter gestreut, damit warmes
+          Licht auch auf Bodendecke, Baumstaemme und Charakter-Beine "blutet" statt nur
+          direkt an der Flamme sichtbar zu sein (Anforderung: "Licht streut auf
+          umliegende Objekte", "orangefarbene Reflexionen"). */}
+      <pointLight position={[0, 0.05, 0.3]} color="#ff5f1a" intensity={0.35} distance={4} decay={1.8} />
     </>
   );
 }
