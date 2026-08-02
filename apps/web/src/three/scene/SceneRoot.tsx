@@ -3,6 +3,7 @@
 import { CameraRig } from "@/three/camera/CameraRig";
 import { BaseLighting } from "@/three/lighting/BaseLighting";
 import { CharacterModel } from "@/three/animation/CharacterModel";
+import { Campfire } from "@/three/scene/Campfire";
 
 function PlaceholderGround() {
   return (
@@ -19,6 +20,7 @@ export function SceneRoot() {
       <CameraRig />
       <BaseLighting />
       <PlaceholderGround />
+      <Campfire />
       <CharacterModel />
       <fog attach="fog" args={["#05070d", 4, 18]} />
     </>

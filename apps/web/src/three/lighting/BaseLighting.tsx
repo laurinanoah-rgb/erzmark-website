@@ -4,24 +4,44 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import type { PointLight } from "three";
 
+const FLICKER_TARGET_CHANGE_SECONDS = 0.18; // wie oft sich das Flacker-Ziel aendert
+const FLICKER_SMOOTHING = 4; // hoeher = traegeres, weicheres Nachziehen
+
 /**
- * Phase 1: Ambient-Nachtlicht + ein flackerndes Punktlicht als Lagerfeuer-Platzhalter.
- * Das Flackern ist absichtlich unregelmäßig (siehe VISION.md: keine linearen Loops).
+ * Ambient-Nachtlicht + gedaempftes Mondlicht-Fuellicht + flackerndes Feuer-Punktlicht.
+ * Das Fuelllicht verhindert, dass das Feuer als einzige Lichtquelle das Gesicht wie in
+ * einer Taschenlampen-Grusel-Szene von unten anstrahlt (siehe VISION.md: atmosphärisch,
+ * nicht gruselig). Das Flackern ist ein geglätteter Random-Walk statt Pro-Frame-Rauschen,
+ * damit es "langsam" statt "hektisch" wirkt (VISION.md, Abschnitt Qualität).
  */
 export function BaseLighting() {
   const fireLightRef = useRef<PointLight>(null);
+  const flickerTarget = useRef(0);
+  const flickerCurrent = useRef(0);
+  const timeSinceTargetChange = useRef(0);
 
-  useFrame(({ clock }) => {
+  useFrame(({ clock }, delta) => {
     if (!fireLightRef.current) return;
     const t = clock.getElapsedTime();
-    const flicker = Math.sin(t * 8) * 0.15 + Math.sin(t * 17.3) * 0.1 + Math.random() * 0.1;
-    fireLightRef.current.intensity = 2.2 + flicker;
+
+    timeSinceTargetChange.current += delta;
+    if (timeSinceTargetChange.current > FLICKER_TARGET_CHANGE_SECONDS) {
+      flickerTarget.current = (Math.random() - 0.5) * 0.5;
+      timeSinceTargetChange.current = 0;
+    }
+    flickerCurrent.current += (flickerTarget.current - flickerCurrent.current) * Math.min(delta * FLICKER_SMOOTHING, 1);
+
+    const breathing = Math.sin(t * 1.3) * 0.12;
+    fireLightRef.current.intensity = 2.0 + breathing + flickerCurrent.current;
   });
 
   return (
     <>
-      <ambientLight intensity={0.15} color="#1a2440" />
-      <pointLight ref={fireLightRef} position={[0, 0.6, 0]} color="#ff8a3d" intensity={2.2} distance={8} decay={2} />
+      <ambientLight intensity={0.18} color="#1a2440" />
+      {/* Kaltes, gedaempftes Mondlicht-Fuellicht von schraeg oben-vorne, damit Gesicht/Koerper
+          nicht ausschliesslich von unten durchs Feuer beleuchtet werden. */}
+      <directionalLight position={[2, 4, 4]} intensity={0.3} color="#5f7bb8" />
+      <pointLight ref={fireLightRef} position={[0, 0.35, 0.3]} color="#ff8a3d" intensity={2.0} distance={8} decay={2} />
     </>
   );
 }
