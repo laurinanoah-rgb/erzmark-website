@@ -4,6 +4,7 @@ import { ContactShadows, Environment as EnvironmentProbe } from "@react-three/dr
 import { CameraRig } from "@/three/camera/CameraRig";
 import { BaseLighting } from "@/three/lighting/BaseLighting";
 import { CharacterModel } from "@/three/animation/CharacterModel";
+import { Cape } from "@/three/animation/Cape";
 import { Campfire } from "@/three/scene/Campfire";
 import { Environment } from "@/three/scene/Environment";
 import { PostProcessing } from "@/three/effects/PostProcessing";
@@ -32,6 +33,7 @@ export function SceneRoot() {
       <ContactShadows position={[0, 0.005, 0]} opacity={0.55} scale={9} blur={2.2} far={3} color="#000000" />
       <Campfire />
       <CharacterModel />
+      <Cape />
       <Environment />
       <FallingLeaves />
       <Fireflies />
