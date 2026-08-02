@@ -11,6 +11,10 @@ import { useProfile } from "@/hooks/useProfile";
 const MODEL_URL = "/models/character.glb";
 const CROSSFADE_SECONDS = 0.6;
 const SKIN_MATERIAL_NAME = "Skin_normal";
+// Neutraler Erzmark-Abenteurer (VISION.md), gemalt in den echten UV-Regionen des
+// Minecraft-Skin-Standardlayouts (siehe blender-source/character.blend) statt des
+// im GLB gebackenen Vanilla-Steve-Fallbacks.
+const DEFAULT_SKIN_URL = "/textures/erzmark-default-skin.png";
 const textureLoader = new THREE.TextureLoader();
 
 // Minecraft-Skins sind Pixel-Art auf 64x64: kein Mipmapping/Filtering, sonst verschwimmt die Textur.
@@ -50,7 +54,6 @@ export function CharacterModel() {
   const actionsRef = useRef<Record<string, THREE.AnimationAction>>({});
   const activeActionRef = useRef<THREE.AnimationAction | null>(null);
   const skinMaterialRef = useRef<THREE.MeshStandardMaterial | null>(null);
-  const defaultSkinTextureRef = useRef<THREE.Texture | null>(null);
   const [gltf, setGltf] = useState<GLTF | null>(null);
 
   useEffect(() => {
@@ -65,9 +68,7 @@ export function CharacterModel() {
       }
       actionsRef.current = actions;
 
-      const skinMaterial = findSkinMaterial(loaded.scene);
-      skinMaterialRef.current = skinMaterial;
-      defaultSkinTextureRef.current = skinMaterial?.map ?? null;
+      skinMaterialRef.current = findSkinMaterial(loaded.scene);
 
       setGltf(loaded);
     });
@@ -93,21 +94,13 @@ export function CharacterModel() {
   }, [currentClipId, gltf]);
 
   // Personalisierung (VISION.md: "Der Skin wird automatisch geladen"): eingeloggt -> echter
-  // Minecraft-Skin, ausgeloggt -> der neutrale Erzmark-Abenteurer (Default-Textur aus dem GLB).
+  // Minecraft-Skin, ausgeloggt -> der neutrale Erzmark-Abenteurer (eigener Default-Skin).
   useEffect(() => {
     const material = skinMaterialRef.current;
     if (!material || !gltf) return;
 
-    if (!profile?.skinUrl) {
-      if (material.map !== defaultSkinTextureRef.current) {
-        material.map = defaultSkinTextureRef.current;
-        material.needsUpdate = true;
-      }
-      return;
-    }
-
     let cancelled = false;
-    textureLoader.load(profile.skinUrl, (texture) => {
+    textureLoader.load(profile?.skinUrl ?? DEFAULT_SKIN_URL, (texture) => {
       if (cancelled) return;
       material.map = configureSkinTexture(texture);
       material.needsUpdate = true;
