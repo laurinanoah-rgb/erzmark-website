@@ -1,28 +1,31 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Billboard } from "@react-three/drei";
 import * as THREE from "three";
 import { useWeather } from "@/hooks/useWeather";
+import { assetLoader } from "@/systems/asset-loader";
 
-const LOG_POSITIONS: Array<{ rotationY: number; rotationZ: number }> = [
-  { rotationY: 0, rotationZ: 0.06 },
-  { rotationY: Math.PI / 3, rotationZ: -0.05 },
-  { rotationY: (Math.PI / 3) * 2, rotationZ: 0.04 },
-];
+const CAMPFIRE_BASE_MODEL_URL = "/models/campfire-base.glb";
 
-function Logs() {
-  return (
-    <group position={[0, 0.06, 0.3]}>
-      {LOG_POSITIONS.map((log, i) => (
-        <mesh key={i} rotation={[Math.PI / 2, 0, log.rotationY]} rotation-z={log.rotationZ}>
-          <cylinderGeometry args={[0.05, 0.06, 0.55, 8]} />
-          <meshStandardMaterial color="#2b1a12" roughness={1} />
-        </mesh>
-      ))}
-    </group>
-  );
+// Erhoehte Plattform aus gekreuzten Balken auf vier Stelzen (Minecraft-Campfire-Block-Optik),
+// gebaut in Blender. Ersetzt die fruehere Platzhalter-Zylinder-Loesung.
+function CampfireBase() {
+  const [scene, setScene] = useState<THREE.Group | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    assetLoader.loadGLTF(CAMPFIRE_BASE_MODEL_URL).then((gltf) => {
+      if (!cancelled) setScene(gltf.scene);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!scene) return null;
+  return <primitive object={scene} position={[0, 0, 0.3]} />;
 }
 
 // Sprite-Flipbook aus einer echten Blender-Mantaflow-Feuersimulation (EEVEE-gerendert,
@@ -101,7 +104,7 @@ function FireSprite() {
 export function Campfire() {
   return (
     <group>
-      <Logs />
+      <CampfireBase />
       <FireSprite />
     </group>
   );
