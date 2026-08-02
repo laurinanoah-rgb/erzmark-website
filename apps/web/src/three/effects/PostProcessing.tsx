@@ -54,7 +54,9 @@ export function PostProcessing() {
       ) : (
         <></>
       )}
-      <DepthOfField focusDistance={0.045} focalLength={0.035} bokehScale={2.2} height={480} />
+      {/* Ziel statt normierter focusDistance: robust gegenueber Kamera-Umbauten
+          (Weltkoordinate = Charakter-Kopf/Torso-Bereich, siehe CameraRig.tsx). */}
+      <DepthOfField target={[0, 1.5, -1]} focalLength={0.035} bokehScale={2.2} height={480} />
       <ChromaticAberration offset={new Vector2(0.0006, 0.0006)} radialModulation={false} modulationOffset={0} />
       <HueSaturation hue={0} saturation={0.08} />
       <Noise premultiply blendFunction={BlendFunction.OVERLAY} opacity={0.06} />
