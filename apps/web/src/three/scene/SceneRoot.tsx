@@ -7,6 +7,10 @@ import { CharacterModel } from "@/three/animation/CharacterModel";
 import { Campfire } from "@/three/scene/Campfire";
 import { Environment } from "@/three/scene/Environment";
 import { PostProcessing } from "@/three/effects/PostProcessing";
+import { FallingLeaves } from "@/three/particles/FallingLeaves";
+import { Fireflies } from "@/three/particles/Fireflies";
+import { DustMotes } from "@/three/particles/DustMotes";
+import { GroundFog } from "@/three/weather/GroundFog";
 
 function PlaceholderGround() {
   return (
@@ -29,6 +33,10 @@ export function SceneRoot() {
       <Campfire />
       <CharacterModel />
       <Environment />
+      <FallingLeaves />
+      <Fireflies />
+      <DustMotes />
+      <GroundFog />
       <fog attach="fog" args={["#05070d", 4, 18]} />
       <PostProcessing />
     </>

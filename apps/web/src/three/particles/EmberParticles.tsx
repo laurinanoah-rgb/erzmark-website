@@ -38,7 +38,8 @@ const vertexShader = /* glsl */ `
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     float sizeFalloff = 1.0 - cycle;
-    gl_PointSize = aSize * sizeFalloff * (220.0 / -mvPosition.z);
+    float dist = max(-mvPosition.z, 0.5);
+    gl_PointSize = min(aSize * sizeFalloff * (220.0 / dist), 18.0);
     gl_Position = projectionMatrix * mvPosition;
   }
 `;

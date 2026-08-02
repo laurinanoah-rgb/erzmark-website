@@ -37,9 +37,43 @@ function generateTreePlacements(): TreePlacement[] {
   return placements;
 }
 
+// Gemeinsamer Wind-Uniform fuer alle Baum-Klone (ein Material, per onBeforeCompile
+// gepatcht -> ein Zeit-Update pro Frame reicht fuer die ganze Waldkulisse).
+const windUniforms = { uTime: { value: 0 }, uWindStrength: { value: 0.35 } };
+
+function patchFoliageWind(material: THREE.Material) {
+  if (!(material instanceof THREE.MeshStandardMaterial)) return;
+  material.onBeforeCompile = (shader) => {
+    shader.uniforms.uTime = windUniforms.uTime;
+    shader.uniforms.uWindStrength = windUniforms.uWindStrength;
+    shader.vertexShader = shader.vertexShader
+      .replace(
+        "#include <common>",
+        `#include <common>
+        uniform float uTime;
+        uniform float uWindStrength;`,
+      )
+      .replace(
+        "#include <begin_vertex>",
+        `#include <begin_vertex>
+        {
+          float treePhase = (modelMatrix[3].x * 12.9898 + modelMatrix[3].z * 78.233);
+          float sway = sin(uTime * 1.1 + treePhase) * 0.5 + sin(uTime * 2.3 + treePhase * 1.7) * 0.3;
+          float heightMask = clamp(position.y * 0.35, 0.0, 1.0);
+          transformed.x += sway * heightMask * uWindStrength;
+          transformed.z += cos(uTime * 0.9 + treePhase) * heightMask * uWindStrength * 0.6;
+        }`,
+      );
+  };
+  material.needsUpdate = true;
+}
+
 function Trees() {
   const [variants, setVariants] = useState<THREE.Object3D[] | null>(null);
   const placements = useMemo(generateTreePlacements, []);
+  const { windStrength } = useWeather();
+  const windRef = useRef(windStrength);
+  windRef.current = windStrength;
 
   useEffect(() => {
     let cancelled = false;
@@ -52,6 +86,8 @@ function Trees() {
           if (node instanceof THREE.Mesh) {
             node.castShadow = true;
             node.receiveShadow = true;
+            const material = node.material as THREE.Material;
+            if (material.name === "Tree_Foliage_Mat") patchFoliageWind(material);
           }
         });
       }
@@ -61,6 +97,11 @@ function Trees() {
       cancelled = true;
     };
   }, []);
+
+  useFrame(({ clock }) => {
+    windUniforms.uTime.value = clock.getElapsedTime();
+    windUniforms.uWindStrength.value = 0.15 + windRef.current * 0.5;
+  });
 
   if (!variants) return null;
 
