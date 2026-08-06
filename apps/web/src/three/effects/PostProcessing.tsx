@@ -60,7 +60,7 @@ export function PostProcessing() {
           Vorher lagen mit focalLength 0.035 und bokehScale 2.2 praktisch alle Ebenen
           ausserhalb der Schaerfe -- auch Feuer und Figur. Im Mockup ist nur der ferne
           Hintergrund weich, der Vordergrund durchgehend scharf. */}
-      <DepthOfField target={[0.6, 1.1, 0]} focalLength={0.18} bokehScale={1.4} height={480} />
+      <DepthOfField target={[0.6, 1.1, 0]} focalLength={0.32} bokehScale={0.9} height={480} />
       <ChromaticAberration offset={new Vector2(0.0006, 0.0006)} radialModulation={false} modulationOffset={0} />
       <HueSaturation hue={0} saturation={0.08} />
       <Noise premultiply blendFunction={BlendFunction.OVERLAY} opacity={0.06} />

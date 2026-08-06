@@ -63,8 +63,9 @@ function frameAt(step: number): number {
 }
 // Die Feuerstelle ist 0.62 Einheiten breit; bei 1.7 Hoehe war das Sprite mit 1.21 Breite
 // fast doppelt so breit wie die Holzscheite darunter. 1.25 ergibt 0.89 Breite -- die Flamme
-// steht damit auf den Scheiten, ohne seitlich darueber hinauszuquellen.
-const SPRITE_HEIGHT = 1.25;
+// steht damit auf den Scheiten. 1.5 haelt die Flamme als Blickfang praesent,
+// wie in der Vorlage, wo sie deutlich ueber die Scheite hinausragt.
+const SPRITE_HEIGHT = 1.5;
 const SPRITE_ASPECT = 320 / 448; // Breite/Hoehe eines einzelnen Frames im Atlas
 
 function useFireAtlasTexture() {

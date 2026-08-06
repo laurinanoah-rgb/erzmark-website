@@ -12,13 +12,39 @@ const MODEL_URL = "/models/character.glb";
 const CROSSFADE_SECONDS = 0.6;
 
 // Die gesamte Szene steht auf Minecraft-Massstab: 1 Einheit = 1 Block. Feuerstelle
-// (0.62 breit), Umhang (0.85 hoch) und Baeume (6.89 hoch) sind bereits so exportiert --
-// nur character.glb nicht. Das Rig kommt 4.21 Einheiten hoch aus Blender und schwebt
-// zusaetzlich 1.01 Einheiten ueber dem Ursprung. Ungescaled ueberragt der NPC damit den
-// Wald und wird oben angeschnitten. Statt einen gemessenen Faktor fest zu verdrahten,
-// wird beim Laden einmal die Bind-Pose vermessen und auf Spielerhoehe normalisiert --
-// das ueberlebt den geplanten Rig-Neuexport (siehe PLAN.md Phase 3) ohne Zahlenpflege.
+// (0.62 breit) und Baeume (6.89 hoch) sind bereits so exportiert -- character.glb nicht.
+// Beim Laden wird die Bind-Pose vermessen und auf Spielerhoehe normalisiert; das
+// ueberlebt den geplanten Rig-Neuexport (PLAN.md Phase 3) ohne Zahlenpflege.
 const PLAYER_HEIGHT = 1.8;
+
+/**
+ * Objekte, die das Thomas-Rig aus Blender mitexportiert, die aber nicht zur Figur
+ * gehoeren. Alle drei Gruppen wurden zur Laufzeit ueber ihre Weltmasse identifiziert:
+ *
+ * - `1_Layer_Extrusion` / `2_Layer_Extrusion`: zwei 0.84er Wuerfel bei y=3.80 und y=4.80.
+ *   Der Kopf sitzt bei y=2.80 -- sie schweben also frei ueber der Figur. Es sind die
+ *   Hilfskoerper des Addons fuer die zweite Skin-Ebene, nicht ans Skelett gebunden.
+ *   Sie waren im Bild als graue Kaesten neben dem Kopf sichtbar und haben zusaetzlich
+ *   die Bounding-Box auf 4.21 aufgeblaeht, wodurch die Groessennormalisierung die Figur
+ *   auf die halbe Hoehe gerechnet hat (echte Figurenhoehe: 2.19).
+ * - `0__MATERIALS`: 15x15 cm grosse Platte neben dem Kopf. In Blender haelt sie
+ *   Materialreferenzen am Leben, damit sie nicht weggeraeumt werden -- reines Hilfsmittel.
+ * - Gesichts-Innenleben (`Top_teeth`, `Bottom_teeth`, `Tongue`, Mund- und Augenweiss-
+ *   Teile): Bei einem normalen Minecraft-Skin kommt das Gesicht komplett aus der Textur.
+ *   Die Zaehne wurden ausserdem ganz ohne Material exportiert, weshalb three.js sein
+ *   weisses Standardmaterial verwendet hat -- sie lagen als weisser Fleck ueber dem
+ *   halben Gesicht.
+ */
+const HIDDEN_RIG_NODES = new Set([
+  "1_Layer_Extrusion",
+  "2_Layer_Extrusion",
+  "0__MATERIALS",
+  "Top_teeth",
+  "Bottom_teeth",
+  "Tongue",
+  "Cube021_2", // Augenweiss-Streifen auf der Gesichtsflaeche
+  "Cube021_3", // Mundhoehle
+]);
 
 // Blender liefert mehrere Skin-Materialien am selben Rig ("Skin_normal", "Skin UV",
 // "Skin (DO NoT REMOVE)"). Wird nur eines davon getauscht, bleiben Teile des Koerpers
@@ -61,13 +87,35 @@ interface Fit {
 }
 
 /**
+ * Blendet die Rig-Artefakte aus (siehe HIDDEN_RIG_NODES) sowie jedes Mesh, dessen
+ * Material keinen Namen hat -- das sind die Primitiven, die ohne Materialzuweisung
+ * exportiert wurden und deshalb im weissen Standardmaterial von three.js landen.
+ */
+function hideRigArtifacts(scene: THREE.Object3D) {
+  scene.traverse((node) => {
+    if (!(node instanceof THREE.Mesh)) return;
+    const materials = Array.isArray(node.material) ? node.material : [node.material];
+    const hasUnnamedMaterial = materials.some((material) => !material.name);
+    if (HIDDEN_RIG_NODES.has(node.name) || hasUnnamedMaterial) node.visible = false;
+  });
+}
+
+/**
  * Misst die Bind-Pose und leitet daraus Skalierung und Bodenversatz ab, sodass der
  * NPC exakt PLAYER_HEIGHT hoch ist und mit den Fuessen auf y=0 steht. Wird einmal
  * direkt nach dem Laden aufgerufen -- also bevor der Mixer die erste Animation
  * anwendet -- damit das Ergebnis nicht vom gerade laufenden Clip abhaengt.
+ *
+ * Rechnet bewusst nur ueber sichtbare Meshes: Box3.setFromObject beruecksichtigt
+ * `visible` nicht, und genau die ausgeblendeten Hilfswuerfel haben die Box zuvor
+ * fast auf die doppelte Hoehe gezogen.
  */
 function measureFit(scene: THREE.Object3D): Fit {
-  const box = new THREE.Box3().setFromObject(scene);
+  scene.updateWorldMatrix(true, true);
+  const box = new THREE.Box3();
+  scene.traverse((node) => {
+    if (node instanceof THREE.Mesh && node.visible) box.expandByObject(node);
+  });
   const height = box.max.y - box.min.y;
   if (!Number.isFinite(height) || height <= 0) return { scale: 1, offsetY: 0 };
   const scale = PLAYER_HEIGHT / height;
@@ -103,6 +151,7 @@ export function CharacterModel() {
       actionsRef.current = actions;
 
       skinMaterialsRef.current = findSkinMaterials(loaded.scene);
+      hideRigArtifacts(loaded.scene);
       loaded.scene.traverse((node) => {
         if (node instanceof THREE.Mesh) {
           node.castShadow = true;

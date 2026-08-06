@@ -74,6 +74,42 @@ Anläufe nicht gehalten.
 Laufzeit-IK-Controller sind nach dem Backen von Animationen nutzlos. Der Export gehört
 auf ein sauberes, gebackenes Rig reduziert.
 
+### 1.3b Nachtrag: Das Rig exportiert Hilfsobjekte mit
+
+Bei der Umsetzung von Phase 2 zur Laufzeit vermessen — alle Werte in Modell-Einheiten,
+der Kopf sitzt zum Vergleich bei y = 2,80:
+
+| Objekt | Größe | Position | Befund |
+|--------|-------|----------|--------|
+| `1_Layer_Extrusion` | 0,84³ | y = 3,80 | schwebt frei **über** dem Kopf |
+| `2_Layer_Extrusion` | 0,84³ | y = 4,80 | zweiter, noch höher |
+| `0__MATERIALS` | 0,15² | neben dem Kopf | Blender-Hilfsobjekt, hält nur Materialreferenzen |
+| `Top_teeth` | 0,77 × 0,65 | auf dem Gesicht | **ohne Material** → weißes Standardmaterial |
+| `Bottom_teeth` | 0,77 × 0,15 | auf dem Gesicht | ebenso |
+
+Die beiden Extrusion-Würfel sind die Hilfskörper des Thomas-Rig-Addons für die zweite
+Skin-Ebene. Sie sind **nicht ans Skelett gebunden** und standen im Bild als graue Kästen
+neben dem Kopf.
+
+Folgeschaden: Sie zogen die Bounding-Box auf 4,21 hoch, obwohl die Figur real nur 2,19
+misst. Die Größennormalisierung hat den NPC dadurch auf die **halbe Höhe** gerechnet.
+Beides ist behoben (Artefakte ausgeblendet, Messung nur über sichtbare Meshes).
+
+### 1.3c Die Beine hängen außerhalb des Skeletts
+
+`L.Leg` und `R.leg` sind **eigene Root-Nodes neben dem Armature**, nicht Teil davon. Sie
+sind statisch nach vorn rotiert (Tiefe 1,26 bei 0,79 Höhe) — das Ergebnis der früheren
+Sitzpose-Versuche. Daraus folgt:
+
+- Die Beine folgen **keiner** Animation. Kein Idle-Clip kann sie bewegen.
+- Die Pose ist unveränderlich in den Export eingebacken.
+- Im Bild wirken sie als ein langer, flacher Klotz.
+
+Das ist die eigentliche Ursache dafür, dass die Sitzpose über drei Anläufe nicht gehalten
+hat, und es ist per Code nicht sinnvoll zu reparieren. **Der Rig-Neuexport (Phase 3) ist
+damit der Blocker für den NPC.** Ein Chest-Block unter der Figur lässt die Haltung
+vorläufig als Sitzen lesen, mehr ist ohne neues Rig nicht zu holen.
+
 ### 1.4 Alle anderen Assets sind untexturierte Platzhalter
 
 Aus den GLB-Headern:
@@ -208,7 +244,15 @@ sieht, dann Tiefe.** Nach jeder Phase ist die Seite in einem vorzeigbaren Zustan
 
 *Ergebnis: Die Bildaufteilung stimmt, auch wenn die Assets noch Platzhalter sind.*
 
-### Phase 2 — Assets (der große Block)
+### Phase 2 — Assets (der große Block) — *teilweise erledigt*
+
+**Erledigt:** Boden, Wald, Himmel, Wolken, Mond und Requisiten stehen als texturierte
+Blockgeometrie. Die Texturen entstehen in `scripts/generate-textures.mjs` als 16×16
+Pixel-Art — eigene Blockoptik, keine fremden Resource-Pack-Dateien im Repo, und jederzeit
+umfärbbar. Boden und Wald belegen je zwei InstancedMesh, also vier Draw Calls für das
+gesamte Gelände samt Wald.
+
+**Offen:** Feuer und Rauch (siehe unten), Kapuze/Umhang entfallen auf Wunsch.
 
 Hier steckt der meiste Aufwand. Reihenfolge nach Bildwirkung:
 

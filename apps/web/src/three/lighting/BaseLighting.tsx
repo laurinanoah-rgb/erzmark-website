@@ -35,7 +35,7 @@ export function BaseLighting() {
       flickerCurrent.current += (flickerTarget.current - flickerCurrent.current) * Math.min(delta * FLICKER_SMOOTHING, 1);
 
       const breathing = Math.sin(t * 1.3) * 0.12;
-      fireLightRef.current.intensity = 2.0 + breathing + flickerCurrent.current;
+      fireLightRef.current.intensity = 3.2 + breathing + flickerCurrent.current;
     }
 
     if (moonLightRef.current) {
@@ -73,8 +73,8 @@ export function BaseLighting() {
         ref={fireLightRef}
         position={[0, 0.35, 0]}
         color="#ff8a3d"
-        intensity={2.0}
-        distance={8}
+        intensity={3.2}
+        distance={11}
         decay={2}
         castShadow
         shadow-mapSize={[512, 512]}
@@ -84,7 +84,7 @@ export function BaseLighting() {
           Licht auch auf Bodendecke, Baumstaemme und Charakter-Beine "blutet" statt nur
           direkt an der Flamme sichtbar zu sein (Anforderung: "Licht streut auf
           umliegende Objekte", "orangefarbene Reflexionen"). */}
-      <pointLight position={[0, 0.05, 0]} color="#ff5f1a" intensity={0.35} distance={4} decay={1.8} />
+      <pointLight position={[0, 0.05, 0]} color="#ff5f1a" intensity={0.6} distance={5} decay={1.8} />
     </>
   );
 }

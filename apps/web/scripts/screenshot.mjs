@@ -59,12 +59,17 @@ try {
     if (msg.type() === "error") problems.push(`console: ${msg.text()}`);
   });
 
-  await page.goto(url, { waitUntil: "networkidle", timeout: 90_000 });
+  // Bewusst nicht "networkidle": der Dev-Server haelt eine HMR-Verbindung offen, und
+  // unter Software-Rendering kann der erste Frame lange dauern -- beides laesst
+  // networkidle in einen Timeout laufen, obwohl die Seite laedt.
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90_000 });
 
   // Assets laden asynchron nach und die Idle-Animationen brauchen Anlauf --
   // ein Screenshot direkt nach "networkidle" zeigt eine halb aufgebaute Szene.
   await page.waitForTimeout(waitMs);
-  await page.screenshot({ path: output });
+  // Grosszuegiges Limit: unter Software-Rendering (CI, Container) braucht ein Frame
+  // dieser Szene deutlich laenger als die 30 s Voreinstellung von Playwright.
+  await page.screenshot({ path: output, timeout: 180_000 });
 
   const canvasCount = await page.evaluate(() => document.querySelectorAll("canvas").length);
   if (canvasCount === 0) {

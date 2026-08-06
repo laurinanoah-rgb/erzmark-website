@@ -97,9 +97,9 @@ export function GroundFog() {
     <group>
       {/* Deckkraft rund halbiert: die Summe der drei Ebenen lag zuvor bei ~0.49 und
           machte den Nebel zur dominanten Flaeche im unteren Bilddrittel. */}
-      <FogLayer position={[0, 0.08, 0]} size={[16, 16]} speed={[0.012, 0.006]} opacity={0.11} />
-      <FogLayer position={[1.5, 0.18, -1]} size={[14, 14]} speed={[-0.008, 0.01]} opacity={0.08} />
-      <FogLayer position={[-1, 0.28, 1]} size={[12, 12]} speed={[0.006, -0.009]} opacity={0.06} />
+      <FogLayer position={[0, 0.08, 0]} size={[16, 16]} speed={[0.012, 0.006]} opacity={0.07} />
+      <FogLayer position={[1.5, 0.18, -1]} size={[14, 14]} speed={[-0.008, 0.01]} opacity={0.05} />
+      <FogLayer position={[-1, 0.28, 1]} size={[12, 12]} speed={[0.006, -0.009]} opacity={0.04} />
     </group>
   );
 }

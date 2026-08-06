@@ -10,13 +10,16 @@ import type { PerspectiveCamera as ThreePerspectiveCamera } from "three";
  * Bildaufbau nach dem Mockup: leichte Untersicht, Feuer im linken Bilddrittel,
  * NPC im rechten, viel Kopfraum fuer Rauch und Himmel.
  *
- * Die Kamera steht bewusst tiefer als die Blickhoehe eines Stehenden (0.95 statt ~1.7):
- * dadurch ragen die Baumkronen nach oben aus dem Bild, was dem Wald im Mockup seine
- * Groesse gibt. Das Blickziel liegt zwischen Feuer (x=0) und NPC (x=1.05), aber naeher
- * am Feuer -- so rutscht das Feuer links der Mitte und der NPC nach rechts.
+ * Die Kamera steht bewusst tiefer als die Blickhoehe eines Stehenden: dadurch ragen die
+ * Baumkronen nach oben aus dem Bild, was dem Wald seine Groesse gibt. Das Blickziel liegt
+ * zwischen Feuer (x=0) und NPC, aber naeher am Feuer -- so rutscht das Feuer links der
+ * Mitte und der NPC nach rechts.
  */
-const BASE_POSITION: [number, number, number] = [0.45, 0.92, 2.85];
-const LOOK_AT = new THREE.Vector3(0.42, 1.0, 0);
+// Abstand an die korrigierte Figurengroesse angepasst: der NPC ist jetzt echte 1.8
+// Einheiten hoch (zuvor durch fehlerhafte Bounding-Box auf die Haelfte normalisiert)
+// und fuellte bei 2.85 Abstand fast das ganze Bild.
+const BASE_POSITION: [number, number, number] = [0.62, 1.18, 4.1];
+const LOOK_AT = new THREE.Vector3(0.62, 0.98, 0);
 const FOV = 46;
 
 const SHAKE_AMOUNT = 0.012; // sehr dezent -- Handheld-Gefuehl, keine Ablenkung

@@ -1,12 +1,15 @@
 "use client";
 
-import { ContactShadows, Environment as EnvironmentProbe, Lightformer } from "@react-three/drei";
+import { Environment as EnvironmentProbe, Lightformer } from "@react-three/drei";
 import { CameraRig } from "@/three/camera/CameraRig";
 import { BaseLighting } from "@/three/lighting/BaseLighting";
 import { CharacterModel } from "@/three/animation/CharacterModel";
-import { Cape } from "@/three/animation/Cape";
 import { Campfire } from "@/three/scene/Campfire";
 import { Environment } from "@/three/scene/Environment";
+import { Ground } from "@/three/scene/Ground";
+import { BlockTrees } from "@/three/scene/BlockTrees";
+import { Sky } from "@/three/scene/Sky";
+import { Props } from "@/three/scene/Props";
 import { PostProcessing } from "@/three/effects/PostProcessing";
 import { FallingLeaves } from "@/three/particles/FallingLeaves";
 import { Fireflies } from "@/three/particles/Fireflies";
@@ -16,33 +19,26 @@ import { GroundFog } from "@/three/weather/GroundFog";
 // Weltmassstab: 1 Einheit = 1 Minecraft-Block. Die Feuerstelle liegt im Ursprung,
 // der NPC sitzt rechts davon -- entsprechend der Bildaufteilung im Mockup
 // (Feuer im linken Drittel, NPC im rechten).
-const NPC_POSITION: [number, number, number] = [1.05, 0, 0.15];
+// Sitzhoehe: der NPC sitzt auf der Kiste aus Props.tsx (0.9 hoch), nicht auf dem Boden.
+const NPC_POSITION: [number, number, number] = [1.5, 0.62, -0.35];
 // -90 Grad wuerde den NPC exakt zum Feuer drehen; die Abweichung dreht ihn zusaetzlich
 // leicht zur Kamera, damit das Gesicht sichtbar bleibt (wie im Mockup).
 const NPC_ROTATION_Y = -Math.PI / 2 + 0.55;
 
-function PlaceholderGround() {
-  return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
-      <planeGeometry args={[40, 40]} />
-      {/* Platzhalter bis zur texturierten Gras-/Steinweg-Flaeche aus Phase 2 (PLAN.md).
-          Sehr dunkel und stumpf, damit das Mondlicht die Flaeche nicht als helle
-          Graustufe ausbrennt und der Feuerschein die dominante Lichtquelle bleibt. */}
-      <meshStandardMaterial color="#070c15" roughness={1} metalness={0} />
-    </mesh>
-  );
-}
-
 /**
- * Charakter und Umhang als eine Einheit. Beide rendern intern am lokalen Ursprung;
- * die Weltplatzierung passiert ausschliesslich hier -- damit kann der NPC verschoben
- * oder gedreht werden, ohne dass der Umhang zurueckbleibt.
+ * Der NPC rendert intern am lokalen Ursprung; die Weltplatzierung passiert
+ * ausschliesslich hier.
+ *
+ * Ohne Umhang: cape.glb ist eine freistehende, nicht ans Skelett gebundene Plane. Sie
+ * folgt keiner Animation, haengt sichtbar neben dem Ruecken statt an ihm, und in der
+ * Vorlage gibt es ohnehin kein separates Tuch -- dort ist die Kapuze Teil der Blockfigur
+ * selbst. Der Umhang kommt in Phase 3 zurueck, dann als echter Minecraft-Cape am neu
+ * exportierten Rig (PLAN.md). Das Asset bleibt dafuer im Repo.
  */
 function Npc() {
   return (
     <group position={NPC_POSITION} rotation={[0, NPC_ROTATION_Y, 0]}>
       <CharacterModel />
-      <Cape />
     </group>
   );
 }
@@ -75,8 +71,10 @@ export function SceneRoot() {
       <LocalEnvironment />
       <CameraRig />
       <BaseLighting />
-      <PlaceholderGround />
-      <ContactShadows position={[0, 0.005, 0]} opacity={0.55} scale={9} blur={2.2} far={3} color="#000000" />
+      <Sky />
+      <Ground />
+      <BlockTrees />
+      <Props />
       <Campfire />
       <Npc />
       <Environment />
@@ -84,9 +82,11 @@ export function SceneRoot() {
       <Fireflies />
       <DustMotes />
       <GroundFog />
-      {/* Reichweite an den groesseren Bildausschnitt angepasst: bei 4/18 verschwand der
-          Waldrand (Radius ~5.5) fast vollstaendig im Nebel. */}
-      <fog attach="fog" args={["#05070d", 6, 26]} />
+      {/* Nebelfarbe am Horizontton des Himmels statt an Schwarz: so laeuft der Waldrand
+          in den Himmel aus, statt als schwarzes Band davor zu stehen. Reichweite deckt
+          den Waldring (Radius 6.5-11) ab -- ContactShadows entfaellt, das Gelaende
+          besteht jetzt aus echten Bloecken, die selbst Schatten werfen. */}
+      <fog attach="fog" args={["#0b1526", 9, 42]} />
       <PostProcessing />
     </>
   );
