@@ -49,7 +49,11 @@ const fragmentShader = /* glsl */ `
     float edge = smoothstep(0.0, 0.45, vUv.x) * smoothstep(1.0, 0.55, vUv.x)
       * smoothstep(0.0, 0.35, vUv.y) * smoothstep(1.0, 0.5, vUv.y);
     float alpha = smoothstep(0.35, 0.75, n) * edge * uOpacity;
-    gl_FragColor = vec4(vec3(0.55, 0.6, 0.7), alpha);
+    // Deutlich dunkler als zuvor (0.55/0.60/0.70). Bei der flachen Kameraneigung werden
+    // die drei Ebenen fast von der Seite gesehen und ueberlagern sich fast deckend --
+    // in Hellgrau ergab das eine weisse Flaeche, die den Boden ersetzte statt ihn zu
+    // umspielen. Der Nebel soll die Szene truebe machen, nicht aufhellen.
+    gl_FragColor = vec4(vec3(0.20, 0.25, 0.34), alpha);
   }
 `;
 
@@ -91,9 +95,11 @@ function FogLayer({ position, size, speed, opacity }: FogLayerProps) {
 export function GroundFog() {
   return (
     <group>
-      <FogLayer position={[0, 0.08, 0]} size={[16, 16]} speed={[0.012, 0.006]} opacity={0.22} />
-      <FogLayer position={[1.5, 0.18, -1]} size={[14, 14]} speed={[-0.008, 0.01]} opacity={0.15} />
-      <FogLayer position={[-1, 0.28, 1]} size={[12, 12]} speed={[0.006, -0.009]} opacity={0.12} />
+      {/* Deckkraft rund halbiert: die Summe der drei Ebenen lag zuvor bei ~0.49 und
+          machte den Nebel zur dominanten Flaeche im unteren Bilddrittel. */}
+      <FogLayer position={[0, 0.08, 0]} size={[16, 16]} speed={[0.012, 0.006]} opacity={0.11} />
+      <FogLayer position={[1.5, 0.18, -1]} size={[14, 14]} speed={[-0.008, 0.01]} opacity={0.08} />
+      <FogLayer position={[-1, 0.28, 1]} size={[12, 12]} speed={[0.006, -0.009]} opacity={0.06} />
     </group>
   );
 }

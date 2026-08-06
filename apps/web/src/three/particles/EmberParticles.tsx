@@ -6,7 +6,9 @@ import * as THREE from "three";
 import { useWeather } from "@/hooks/useWeather";
 
 const COUNT = 90;
-const BASE_POSITION = new THREE.Vector3(0, 0.15, 0.3);
+// Die Feuerstelle sitzt jetzt im Ursprung (zuvor um z=0.3 versetzt) -- die Funken
+// muessen mitwandern, sonst steigen sie neben der Flamme auf.
+const BASE_POSITION = new THREE.Vector3(0, 0.15, 0);
 const RISE_HEIGHT = 2.4;
 
 // GPU-getriebene Feuerfunken: Position/Groesse/Fade laufen komplett im Vertex-/
@@ -39,7 +41,10 @@ const vertexShader = /* glsl */ `
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     float sizeFalloff = 1.0 - cycle;
     float dist = max(-mvPosition.z, 0.5);
-    gl_PointSize = min(aSize * sizeFalloff * (220.0 / dist), 18.0);
+    // 220/dist lief bei Kameraabstaenden um 4 Einheiten dauerhaft in die Obergrenze --
+    // saemtliche Funken hingen konstant bei 18 px und wirkten als grosse Kugeln statt
+    // als Glut. Kleinerer Faktor und Deckel halten sie als feine Punkte.
+    gl_PointSize = min(aSize * sizeFalloff * (55.0 / dist), 6.0);
     gl_Position = projectionMatrix * mvPosition;
   }
 `;

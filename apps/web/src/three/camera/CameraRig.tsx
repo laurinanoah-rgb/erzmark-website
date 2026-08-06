@@ -3,17 +3,30 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
+import * as THREE from "three";
 import type { PerspectiveCamera as ThreePerspectiveCamera } from "three";
 
-const BASE_POSITION: [number, number, number] = [0, 1.6, 5];
+/**
+ * Bildaufbau nach dem Mockup: leichte Untersicht, Feuer im linken Bilddrittel,
+ * NPC im rechten, viel Kopfraum fuer Rauch und Himmel.
+ *
+ * Die Kamera steht bewusst tiefer als die Blickhoehe eines Stehenden (0.95 statt ~1.7):
+ * dadurch ragen die Baumkronen nach oben aus dem Bild, was dem Wald im Mockup seine
+ * Groesse gibt. Das Blickziel liegt zwischen Feuer (x=0) und NPC (x=1.05), aber naeher
+ * am Feuer -- so rutscht das Feuer links der Mitte und der NPC nach rechts.
+ */
+const BASE_POSITION: [number, number, number] = [0.45, 0.92, 2.85];
+const LOOK_AT = new THREE.Vector3(0.42, 1.0, 0);
+const FOV = 46;
+
 const SHAKE_AMOUNT = 0.012; // sehr dezent -- Handheld-Gefuehl, keine Ablenkung
 
 /**
  * Statische Basis-Kamera + sehr sanftes prozedurales Wackeln (mehrere ueberlagerte
  * Sinusfrequenzen statt Pro-Frame-Zufall, siehe VISION.md Qualitaet-Abschnitt).
- * Bewusst KEINE Positions-/FOV-Aenderung der Basis-Kamera hier -- ein Repositionierungs-
- * Versuch fuehrte zweimal zu Render-Regressionen (siehe Commit-Historie); die Basis
- * bleibt die verifiziert funktionierende Einstellung, nur die Mikro-Bewegung ist neu.
+ *
+ * Die Blickrichtung wird nach dem Versatz explizit auf LOOK_AT gesetzt, damit das
+ * Wackeln die Bildkomposition nur minimal atmen laesst, statt sie wegdriften zu lassen.
  */
 export function CameraRig() {
   const camRef = useRef<ThreePerspectiveCamera>(null);
@@ -24,8 +37,9 @@ export function CameraRig() {
     const t = clock.getElapsedTime();
     cam.position.x = BASE_POSITION[0] + (Math.sin(t * 0.31) * 0.6 + Math.sin(t * 0.53) * 0.4) * SHAKE_AMOUNT;
     cam.position.y = BASE_POSITION[1] + (Math.sin(t * 0.27 + 1.7) * 0.6 + Math.sin(t * 0.47) * 0.4) * SHAKE_AMOUNT;
-    cam.rotation.z = (Math.sin(t * 0.19) * 0.5 + Math.sin(t * 0.35 + 0.8) * 0.5) * SHAKE_AMOUNT * 0.3;
+    cam.lookAt(LOOK_AT);
+    cam.rotation.z += (Math.sin(t * 0.19) * 0.5 + Math.sin(t * 0.35 + 0.8) * 0.5) * SHAKE_AMOUNT * 0.3;
   });
 
-  return <PerspectiveCamera ref={camRef} makeDefault position={BASE_POSITION} fov={45} />;
+  return <PerspectiveCamera ref={camRef} makeDefault position={BASE_POSITION} fov={FOV} />;
 }

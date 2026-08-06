@@ -180,11 +180,14 @@ function RuneCircle() {
 
   return (
     <mesh ref={meshRef} position={[-3, 6, -13]}>
-      <planeGeometry args={[5, 5]} />
+      {/* Kleiner und blasser als zuvor (5x5 bei Deckkraft 0.35): mit dem neuen, tieferen
+          Bildausschnitt sass die Rune als deutlich lesbarer Ring im oberen Bilddrittel.
+          Sie soll angedeutet bleiben -- etwas, das man fast uebersieht (VISION.md). */}
+      <planeGeometry args={[3.5, 3.5]} />
       <meshBasicMaterial
         map={texture}
         transparent
-        opacity={0.35}
+        opacity={0.14}
         blending={THREE.AdditiveBlending}
         depthWrite={false}
         toneMapped={false}

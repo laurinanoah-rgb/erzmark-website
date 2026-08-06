@@ -10,7 +10,20 @@ import { useProfile } from "@/hooks/useProfile";
 
 const MODEL_URL = "/models/character.glb";
 const CROSSFADE_SECONDS = 0.6;
-const SKIN_MATERIAL_NAME = "Skin_normal";
+
+// Die gesamte Szene steht auf Minecraft-Massstab: 1 Einheit = 1 Block. Feuerstelle
+// (0.62 breit), Umhang (0.85 hoch) und Baeume (6.89 hoch) sind bereits so exportiert --
+// nur character.glb nicht. Das Rig kommt 4.21 Einheiten hoch aus Blender und schwebt
+// zusaetzlich 1.01 Einheiten ueber dem Ursprung. Ungescaled ueberragt der NPC damit den
+// Wald und wird oben angeschnitten. Statt einen gemessenen Faktor fest zu verdrahten,
+// wird beim Laden einmal die Bind-Pose vermessen und auf Spielerhoehe normalisiert --
+// das ueberlebt den geplanten Rig-Neuexport (siehe PLAN.md Phase 3) ohne Zahlenpflege.
+const PLAYER_HEIGHT = 1.8;
+
+// Blender liefert mehrere Skin-Materialien am selben Rig ("Skin_normal", "Skin UV",
+// "Skin (DO NoT REMOVE)"). Wird nur eines davon getauscht, bleiben Teile des Koerpers
+// auf der eingebackenen Steve-Textur stehen -- deshalb Praefix-Match statt Namensgleichheit.
+const SKIN_MATERIAL_PREFIX = "skin";
 // Neutraler Erzmark-Abenteurer (VISION.md), gemalt in den echten UV-Regionen des
 // Minecraft-Skin-Standardlayouts (siehe blender-source/character.blend) statt des
 // im GLB gebackenen Vanilla-Steve-Fallbacks.
@@ -29,16 +42,36 @@ function configureSkinTexture(texture: THREE.Texture) {
   return texture;
 }
 
-function findSkinMaterial(scene: THREE.Object3D): THREE.MeshStandardMaterial | null {
-  let found: THREE.MeshStandardMaterial | null = null;
+function findSkinMaterials(scene: THREE.Object3D): THREE.MeshStandardMaterial[] {
+  const found = new Set<THREE.MeshStandardMaterial>();
   scene.traverse((node) => {
-    if (found || !(node instanceof THREE.Mesh)) return;
-    const material = node.material;
-    if (!Array.isArray(material) && material.name === SKIN_MATERIAL_NAME) {
-      found = material as THREE.MeshStandardMaterial;
+    if (!(node instanceof THREE.Mesh)) return;
+    for (const material of Array.isArray(node.material) ? node.material : [node.material]) {
+      if (material.name.toLowerCase().startsWith(SKIN_MATERIAL_PREFIX)) {
+        found.add(material as THREE.MeshStandardMaterial);
+      }
     }
   });
-  return found;
+  return [...found];
+}
+
+interface Fit {
+  scale: number;
+  offsetY: number;
+}
+
+/**
+ * Misst die Bind-Pose und leitet daraus Skalierung und Bodenversatz ab, sodass der
+ * NPC exakt PLAYER_HEIGHT hoch ist und mit den Fuessen auf y=0 steht. Wird einmal
+ * direkt nach dem Laden aufgerufen -- also bevor der Mixer die erste Animation
+ * anwendet -- damit das Ergebnis nicht vom gerade laufenden Clip abhaengt.
+ */
+function measureFit(scene: THREE.Object3D): Fit {
+  const box = new THREE.Box3().setFromObject(scene);
+  const height = box.max.y - box.min.y;
+  if (!Number.isFinite(height) || height <= 0) return { scale: 1, offsetY: 0 };
+  const scale = PLAYER_HEIGHT / height;
+  return { scale, offsetY: -box.min.y * scale };
 }
 
 /**
@@ -53,8 +86,9 @@ export function CharacterModel() {
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
   const actionsRef = useRef<Record<string, THREE.AnimationAction>>({});
   const activeActionRef = useRef<THREE.AnimationAction | null>(null);
-  const skinMaterialRef = useRef<THREE.MeshStandardMaterial | null>(null);
+  const skinMaterialsRef = useRef<THREE.MeshStandardMaterial[]>([]);
   const [gltf, setGltf] = useState<GLTF | null>(null);
+  const [fit, setFit] = useState<Fit>({ scale: 1, offsetY: 0 });
 
   useEffect(() => {
     let cancelled = false;
@@ -68,7 +102,7 @@ export function CharacterModel() {
       }
       actionsRef.current = actions;
 
-      skinMaterialRef.current = findSkinMaterial(loaded.scene);
+      skinMaterialsRef.current = findSkinMaterials(loaded.scene);
       loaded.scene.traverse((node) => {
         if (node instanceof THREE.Mesh) {
           node.castShadow = true;
@@ -76,6 +110,7 @@ export function CharacterModel() {
         }
       });
 
+      setFit(measureFit(loaded.scene));
       setGltf(loaded);
     });
     return () => {
@@ -102,14 +137,17 @@ export function CharacterModel() {
   // Personalisierung (VISION.md: "Der Skin wird automatisch geladen"): eingeloggt -> echter
   // Minecraft-Skin, ausgeloggt -> der neutrale Erzmark-Abenteurer (eigener Default-Skin).
   useEffect(() => {
-    const material = skinMaterialRef.current;
-    if (!material || !gltf) return;
+    const materials = skinMaterialsRef.current;
+    if (materials.length === 0 || !gltf) return;
 
     let cancelled = false;
     textureLoader.load(profile?.skinUrl ?? DEFAULT_SKIN_URL, (texture) => {
       if (cancelled) return;
-      material.map = configureSkinTexture(texture);
-      material.needsUpdate = true;
+      const configured = configureSkinTexture(texture);
+      for (const material of materials) {
+        material.map = configured;
+        material.needsUpdate = true;
+      }
     });
     return () => {
       cancelled = true;
@@ -122,5 +160,8 @@ export function CharacterModel() {
 
   if (!gltf) return null;
 
-  return <primitive object={gltf.scene} position={[0, 0, -1]} />;
+  // Rendert bewusst am lokalen Ursprung mit Fuessen auf y=0. Wo der NPC in der Welt
+  // steht, entscheidet allein die umgebende <Npc>-Gruppe in SceneRoot -- so bleiben
+  // Charakter und Umhang zwangslaeufig deckungsgleich.
+  return <primitive object={gltf.scene} position={[0, fit.offsetY, 0]} scale={fit.scale} />;
 }

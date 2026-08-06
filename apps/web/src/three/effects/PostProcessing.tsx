@@ -19,7 +19,8 @@ import { moonMeshRef } from "@/three/effects/sceneRefs";
 import { HeatHaze } from "@/three/effects/HeatHaze";
 
 // Ungefaehre Bildschirmposition der Feuerstelle bei statischer Kamera (siehe CameraRig.tsx).
-const FIRE_SCREEN_POSITION = new Vector2(0.5, 0.12);
+// Nachgezogen auf den Mockup-Bildaufbau: das Feuer sitzt jetzt links der Bildmitte.
+const FIRE_SCREEN_POSITION = new Vector2(0.42, 0.25);
 
 /**
  * Zentrale Filmlook-Pipeline (VISION.md: "kinoreif" statt "Website"). Bloom fuer
@@ -55,8 +56,11 @@ export function PostProcessing() {
         <></>
       )}
       {/* Ziel statt normierter focusDistance: robust gegenueber Kamera-Umbauten
-          (Weltkoordinate = Charakter-Kopf/Torso-Bereich, siehe CameraRig.tsx). */}
-      <DepthOfField target={[0, 1.5, -1]} focalLength={0.035} bokehScale={2.2} height={480} />
+          (Weltkoordinate = Ebene zwischen Feuer und NPC, siehe CameraRig.tsx).
+          Vorher lagen mit focalLength 0.035 und bokehScale 2.2 praktisch alle Ebenen
+          ausserhalb der Schaerfe -- auch Feuer und Figur. Im Mockup ist nur der ferne
+          Hintergrund weich, der Vordergrund durchgehend scharf. */}
+      <DepthOfField target={[0.6, 1.1, 0]} focalLength={0.18} bokehScale={1.4} height={480} />
       <ChromaticAberration offset={new Vector2(0.0006, 0.0006)} radialModulation={false} modulationOffset={0} />
       <HueSaturation hue={0} saturation={0.08} />
       <Noise premultiply blendFunction={BlendFunction.OVERLAY} opacity={0.06} />

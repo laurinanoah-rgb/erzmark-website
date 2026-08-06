@@ -49,24 +49,29 @@ export function BaseLighting() {
   return (
     <>
       <ambientLight intensity={0.26} color="#212c4a" />
-      {/* Kaltes, gedaempftes Mondlicht-Fuellicht von schraeg oben-vorne, damit Gesicht/Koerper
-          nicht ausschliesslich von unten durchs Feuer beleuchtet werden. */}
+      {/* Kaltes Mondlicht aus Richtung des Mond-Meshes (Environment.tsx: [6, 9, -12]),
+          also von oben-rechts-hinten. Zuvor stand es bei [2, 4, 4] -- vor der Szene und
+          damit auf der gleichen Seite wie die Kamera, wodurch der kalte Kantenlicht-Saum
+          fehlte, der im Mockup die Silhouette des NPC gegen den dunklen Wald absetzt. */}
       <directionalLight
         ref={moonLightRef}
-        position={[2, 4, 4]}
+        position={[5, 7, -6]}
         intensity={MOON_BASE_INTENSITY}
         color="#5f7bb8"
         castShadow
         shadow-mapSize={[1024, 1024]}
-        shadow-camera-left={-6}
-        shadow-camera-right={6}
-        shadow-camera-top={6}
-        shadow-camera-bottom={-6}
+        shadow-camera-left={-8}
+        shadow-camera-right={8}
+        shadow-camera-top={8}
+        shadow-camera-bottom={-8}
         shadow-bias={-0.0025}
       />
+      {/* Schwaches kaltes Fuelllicht von vorne: verhindert, dass das Gesicht bei
+          reinem Gegenlicht komplett absaeuft, ohne den Kantenlicht-Effekt aufzuheben. */}
+      <directionalLight position={[1, 2.5, 5]} intensity={0.12} color="#4a5f92" />
       <pointLight
         ref={fireLightRef}
-        position={[0, 0.35, 0.3]}
+        position={[0, 0.35, 0]}
         color="#ff8a3d"
         intensity={2.0}
         distance={8}
@@ -79,7 +84,7 @@ export function BaseLighting() {
           Licht auch auf Bodendecke, Baumstaemme und Charakter-Beine "blutet" statt nur
           direkt an der Flamme sichtbar zu sein (Anforderung: "Licht streut auf
           umliegende Objekte", "orangefarbene Reflexionen"). */}
-      <pointLight position={[0, 0.05, 0.3]} color="#ff5f1a" intensity={0.35} distance={4} decay={1.8} />
+      <pointLight position={[0, 0.05, 0]} color="#ff5f1a" intensity={0.35} distance={4} decay={1.8} />
     </>
   );
 }
