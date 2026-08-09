@@ -44,19 +44,27 @@ const fragmentShader = /* glsl */ `
 
 function SkyDome() {
   const { condition } = useWeather();
-  // useRef statt useMemo: die Uniforms werden pro Frame beschrieben, und genau dafuer
-  // sind Refs da -- ein useMemo-Ergebnis zu mutieren ist ein Regelverstoss.
-  const uniforms = useRef({
-    uZenith: { value: new THREE.Color("#050a18") },
-    uHorizon: { value: new THREE.Color("#1b2c50") },
-    uMix: { value: 1 },
-  }).current;
+  // Startwerte des Materials. Pro-Frame-Aenderungen laufen bewusst nicht ueber dieses
+  // Objekt, sondern ueber materialRef: Mutationen am uebergebenen Uniform-Objekt
+  // erreichen das Material nicht mehr (in SmokeColumn nachgewiesen), die Abdunklung
+  // bei schlechtem Wetter waere hier also still wirkungslos geblieben.
+  const materialRef = useRef<THREE.ShaderMaterial>(null);
+  const initialUniforms = useMemo(
+    () => ({
+      uZenith: { value: new THREE.Color("#050a18") },
+      uHorizon: { value: new THREE.Color("#1b2c50") },
+      uMix: { value: 1 },
+    }),
+    [],
+  );
 
   // Bewoelkt/Regen/Sturm daempfen den Himmel, ohne den Farbton zu wechseln --
   // die Szene soll stilistisch gleich bleiben (VISION.md, Abschnitt Wetter).
   const target = condition === "clear" ? 1 : condition === "fog" ? 0.7 : 0.55;
   useFrame((_, delta) => {
-    uniforms.uMix.value += (target - uniforms.uMix.value) * Math.min(delta * 0.6, 1);
+    const uMix = materialRef.current?.uniforms.uMix;
+    if (!uMix) return;
+    uMix.value += (target - uMix.value) * Math.min(delta * 0.6, 1);
   });
 
   return (
@@ -65,7 +73,8 @@ function SkyDome() {
     <mesh renderOrder={-1}>
       <sphereGeometry args={[SKY_RADIUS, 32, 16]} />
       <shaderMaterial
-        uniforms={uniforms}
+        ref={materialRef}
+        uniforms={initialUniforms}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         side={THREE.BackSide}

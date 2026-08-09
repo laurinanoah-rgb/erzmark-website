@@ -252,7 +252,24 @@ Pixel-Art — eigene Blockoptik, keine fremden Resource-Pack-Dateien im Repo, un
 umfärbbar. Boden und Wald belegen je zwei InstancedMesh, also vier Draw Calls für das
 gesamte Gelände samt Wald.
 
-**Offen:** Feuer und Rauch (siehe unten), Kapuze/Umhang entfallen auf Wunsch.
+Feuer und Rauch sind ebenfalls erledigt. `scripts/generate-fire.mjs` erzeugt eine
+Flammensequenz mit echter Feuer-Farbrampe (tiefrot → orange → gelb → weißglühend) aus
+vertikal kachelndem Rauschen — die Schleife schließt sich damit ohne Sprung und braucht
+keine Sonderbehandlung. Der alte Blender-Atlas lebt als Rauchsäule weiter, wofür er
+inhaltlich immer schon gedacht war.
+
+**Offen in Phase 2:** Bergsilhouette im Hintergrund, Spitzhacke. Kapuze und Umhang
+entfallen auf Wunsch.
+
+> **Fallstrick, der dabei viel Zeit gekostet hat:** Änderungen an einem Uniform-Objekt,
+> das per `<shaderMaterial uniforms={…}>` übergeben wurde, erreichen das Material **nicht**
+> — nur die Startwerte kommen an. Nachgewiesen: Die Rauchsäule blieb unsichtbar, obwohl
+> `uOpacity` rechnerisch bei ~0,8 lag; ein Testrender mit fest verdrahtetem Alpha zeigte
+> die Säule sofort. Pro-Frame-Uniforms gehören deshalb über eine `ref` auf das Material
+> geschrieben. `Sky.tsx` hatte dieselbe Form (die Wetter-Abdunklung wäre still
+> wirkungslos geblieben) und ist mitkorrigiert. Weitere Stellen mit diesem Muster
+> (`GroundFog`, `EmberParticles`, `DustMotes`, `Fireflies`, `HeatHaze`) verhalten sich
+> unauffällig, sollten bei der nächsten Gelegenheit aber überprüft werden.
 
 Hier steckt der meiste Aufwand. Reihenfolge nach Bildwirkung:
 
