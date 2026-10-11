@@ -2,17 +2,7 @@ name: Weekly agent devlog
 
 on:
   push:
-    paths:
-      - 'devlog/**'
-      - 'tools/devlog.py'
-      - 'tests/test_devlog.py'
-      - '.github/workflows/devlog.yml'
   pull_request:
-    paths:
-      - 'devlog/**'
-      - 'tools/devlog.py'
-      - 'tests/test_devlog.py'
-      - '.github/workflows/devlog.yml'
   schedule:
     - cron: '0 9 * * 5'
   workflow_dispatch:
