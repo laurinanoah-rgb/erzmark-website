@@ -1,0 +1,11 @@
+# Dauerhafte Arbeitsanweisung für Erzmark-Agenten
+
+Diese Prompts können als Projektanweisung in Codex bzw. Claude Code hinterlegt werden. Die versionierte Regel in `AGENTS.md` und `CLAUDE.md` gilt für dieses Repository. Für andere Erzmark-Repositories muss die Anweisung dort ebenfalls eingebunden werden; dieses Repository kann fremde Arbeitsverzeichnisse nicht automatisch steuern.
+
+## Codex
+
+> Wenn du an einem Erzmark-Projekt arbeitest, lege am Ende jeder inhaltlichen Arbeitssitzung einen öffentlich geeigneten Devlog-Eintrag im zentralen GitHub-Repository `laurinanoah-rgb/erzmark-website` an. Nutze `devlog/inbox/YYYY-Www/codex/` und eine neue JSON-Datei gemäß `devlog/README.md`. Schreibe konkret, was tatsächlich gemacht wurde, welchen Nutzen es hat und ob es erledigt, in Arbeit oder blockiert ist. Auch verwertbare Recherche und Planung zählen. Reine Statusabfragen brauchen keinen Eintrag. **Erzmark-APP und Erzmark-Launcher sind ausgenommen; protokolliere diese Arbeiten dort nie.** Prüfe den Eintrag mit `python tools/devlog.py check` und bringe ihn per PR ein. Keine Geheimnisse, privaten Daten oder internen Sicherheitsdetails aufnehmen. Veröffentliche nichts auf erzmark.de und lösche keine Logs ohne ausdrückliche Freigabe. Ist das zentrale Repository nicht erreichbar, gib den fertigen JSON-Entwurf und melde klar, dass der GitHub-Eintrag noch fehlt.
+
+## Claude Code
+
+> Wenn du an einem Erzmark-Projekt arbeitest, lege am Ende jeder inhaltlichen Arbeitssitzung einen öffentlich geeigneten Devlog-Eintrag im zentralen GitHub-Repository `laurinanoah-rgb/erzmark-website` an. Nutze `devlog/inbox/YYYY-Www/claude-code/` und eine neue JSON-Datei gemäß `devlog/README.md`. Schreibe konkret, was tatsächlich gemacht wurde, welchen Nutzen es hat und ob es erledigt, in Arbeit oder blockiert ist. Auch verwertbare Recherche und Planung zählen. Reine Statusabfragen brauchen keinen Eintrag. **Erzmark-APP und Erzmark-Launcher sind ausgenommen; protokolliere diese Arbeiten dort nie.** Prüfe den Eintrag mit `python tools/devlog.py check` und bringe ihn per PR ein. Keine Geheimnisse, privaten Daten oder internen Sicherheitsdetails aufnehmen. Veröffentliche nichts auf erzmark.de und lösche keine Logs ohne ausdrückliche Freigabe. Ist das zentrale Repository nicht erreichbar, gib den fertigen JSON-Entwurf und melde klar, dass der GitHub-Eintrag noch fehlt.

@@ -1,6 +1,6 @@
 # Erzmark Devlog für KI-Agenten
 
-Dieses Verzeichnis sammelt öffentliche, belegbare Wochenmeldungen aus Codex, Claude Code und weiteren Agenten. Das aktuelle `erzmark.de` läuft laut Projektübersicht als MineTrax/Laravel auf dem Server; dieses Next.js-Repository hat derzeit keine News- oder CMS-Schnittstelle. **GitHub Actions erzeugt nur einen Entwurf als Artefakt. Es veröffentlicht keinen Website-Beitrag.**
+Dieses Verzeichnis sammelt öffentliche, belegbare Wochenmeldungen aus Codex, Claude Code und weiteren Agenten. Nach jeder inhaltlichen Erzmark-Arbeitssitzung entsteht ein Eintrag; Erzmark-APP und Erzmark-Launcher sind ausgenommen. Das aktuelle `erzmark.de` läuft laut Projektübersicht als MineTrax/Laravel auf dem Server; dieses Next.js-Repository hat derzeit keine News- oder CMS-Schnittstelle. **GitHub Actions erzeugt nur einen Entwurf als Artefakt. Es veröffentlicht keinen Website-Beitrag.**
 
 ## Eintrag schreiben
 
