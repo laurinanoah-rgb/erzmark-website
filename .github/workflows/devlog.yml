@@ -1,0 +1,64 @@
+name: Weekly agent devlog
+
+on:
+  push:
+    paths:
+      - 'devlog/**'
+      - 'tools/devlog.py'
+      - 'tests/test_devlog.py'
+      - '.github/workflows/devlog.yml'
+  pull_request:
+    paths:
+      - 'devlog/**'
+      - 'tools/devlog.py'
+      - 'tests/test_devlog.py'
+      - '.github/workflows/devlog.yml'
+  schedule:
+    - cron: '0 9 * * 5'
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'ISO week, for example 2026-W41 (blank: current UTC week)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -v
+      - run: python tools/devlog.py check
+
+  weekly-preview:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select week
+        id: week
+        env:
+          INPUT_WEEK: ${{ inputs.week }}
+        run: |
+          if [ -n "$INPUT_WEEK" ]; then
+            echo "value=$INPUT_WEEK" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=$(date -u +%G-W%V)" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Generate review artifact
+        run: python tools/devlog.py preview '${{ steps.week.outputs.value }}' --out devlog-preview
+      - uses: actions/upload-artifact@v4
+        with:
+          name: devlog-${{ steps.week.outputs.value }}-review
+          path: devlog-preview/
+          retention-days: 30
