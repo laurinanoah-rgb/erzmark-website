@@ -37,6 +37,10 @@ def clean_text(value, name):
     return value.strip()
 
 
+def markdown_text(value):
+    return re.sub(r"([\\`*_{}\[\]()#+!|>])", r"\\\1", value)
+
+
 def validate_entry(path, week):
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or set(data) != FIELDS or data["schema_version"] != 1:
@@ -76,6 +80,25 @@ def build(week):
     friday = date.fromordinal(monday.toordinal() + 4).isoformat()
     entries = load_week(week)
     public = [{**item, "id": path.stem} for path, item in entries]
+    groups = [
+        ("done", "Das ist fertig"),
+        ("in_progress", "Daran arbeiten wir"),
+        ("blocked", "Das braucht noch Klärung"),
+    ]
+    lines = []
+    if entries:
+        lines += ["Diese Woche hat sich bei Erzmark einiges bewegt. Hier sind die Änderungen und der Grund, warum wir daran arbeiten.", ""]
+        for status, heading in groups:
+            matching = [item for _, item in entries if item["status"] == status]
+            if matching:
+                lines += [f"## {heading}", ""]
+                for item in matching:
+                    source = f" [Mehr dazu]({item['source']})." if item["source"] else ""
+                    lines += [f"- **{markdown_text(item['summary'])}** — {markdown_text(item['why'])}.{source}"]
+                lines.append("")
+    else:
+        lines += ["Für diese Woche liegen noch keine geprüften Änderungen vor.", ""]
+    markdown = "\n".join(lines).rstrip() + "\n"
     export = {
         "schema_version": 1,
         "week": week,
@@ -83,18 +106,10 @@ def build(week):
         "title": friday,
         "tag": "DEV-Build",
         "status": "draft",
+        "minetrax": {"title": friday, "type": 1, "body_markdown": markdown, "is_published": False},
         "entries": public,
     }
-    lines = [f"# {friday}", "", "Tag: DEV-Build", "", "Entwurf – redaktionelle Freigabe erforderlich", ""]
-    if entries:
-        lines += ["## Diese Woche", ""]
-        labels = {"done": "Erledigt", "in_progress": "In Arbeit", "blocked": "Blockiert"}
-        for _, item in entries:
-            source = f" ([Quelle]({item['source']}))" if item["source"] else ""
-            lines += [f"- **{item['summary']}** — {item['why']} ({labels[item['status']]}; {item['agent']}){source}"]
-    else:
-        lines += ["Keine freigegebenen Einträge für diese Woche vorhanden."]
-    return export, "\n".join(lines) + "\n"
+    return export, markdown
 
 
 def digest(export):
@@ -131,7 +146,7 @@ def approve_archive(week):
     export["status"] = "approved"
     export["approval"] = approval
     (folder / "week.json").write_text(json.dumps(export, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (folder / "article.md").write_text(markdown.replace("Entwurf – redaktionelle Freigabe erforderlich\n\n", ""), encoding="utf-8")
+    (folder / "article.md").write_text(markdown, encoding="utf-8")
     # Inbox entries remain intact. Publication requires a separate, explicit website step.
 
 
@@ -146,8 +161,7 @@ def check_archive(week):
     current["approval"] = approval
     if archived != current:
         raise ValueError(f"{week}: archived JSON differs from approved entries")
-    expected_article = markdown.replace("Entwurf – redaktionelle Freigabe erforderlich\n\n", "")
-    if (folder / "article.md").read_text(encoding="utf-8") != expected_article:
+    if (folder / "article.md").read_text(encoding="utf-8") != markdown:
         raise ValueError(f"{week}: archived article differs from approved entries")
 
 

@@ -38,8 +38,11 @@ class DevlogTest(unittest.TestCase):
         self.assertEqual(export["title"], "2026-10-09")
         self.assertEqual(export["tag"], "DEV-Build")
         self.assertEqual(export["entries"][0]["id"], self.entry_path.stem)
-        self.assertTrue(article.startswith("# 2026-10-09\n"))
-        self.assertNotIn("# 41", article)
+        self.assertEqual(export["minetrax"], {
+            "title": "2026-10-09", "type": 1, "body_markdown": article, "is_published": False,
+        })
+        self.assertIn("## Das ist fertig", article)
+        self.assertNotIn("# 2026-10-09", article)
 
     def test_rejects_secret_and_wrong_week(self):
         self.entry["summary"] = "API token updated"
