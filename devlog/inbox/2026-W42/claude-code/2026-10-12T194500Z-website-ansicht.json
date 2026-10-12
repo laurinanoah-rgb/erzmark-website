@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-12",
+  "summary": "Webseite: neue Ansicht Simple oder Fortschrittlich pro Besucher, Phase 1 lokal umgesetzt",
+  "why": "Besucher können die Seite schlichter oder fortgeschrittener nutzen; die Wahl bleibt im Browser erhalten. Die Vorschau-Abnahme steht noch aus, es ist nichts veröffentlicht",
+  "status": "in_progress",
+  "source": null
+}
