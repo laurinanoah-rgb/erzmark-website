@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-12",
+  "summary": "Bedrock-Beitritt geprüft und repariert: Das Bedrock-Pack wird wieder vollständig übertragen, weil Spieler in der Lobby nicht mehr wegen angeblichen Fliegens hinausgeworfen werden; die Konvertierungs-Software wurde aktualisiert und eine zu große Server-Logo-Grafik verkleinert",
+  "why": "Neue Bedrock-Spieler sollen ohne Abbruch beitreten und alle Modelle und Oberflächen sehen",
+  "status": "done",
+  "source": null
+}
