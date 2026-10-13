@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Ursache für wieder auftauchende gelbe Platzhalter-Skins bei Bedrock-NPCs gefunden und behoben: Ein Server-Update hatte das interne Nachrichtenformat geändert, das Skin-Plugin wurde darauf angepasst; zusätzlich ist das doppelte Party-HUD auf Bedrock beseitigt",
+  "why": "Bedrock-Spieler sollen die NPCs mit ihren echten Skins sehen und nur eine Party-Anzeige haben; die Bestätigung im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

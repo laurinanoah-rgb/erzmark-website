@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Bedrock-Aufwachszene bekommt Augenlider: Beim Aufwachen öffnen sich oben und unten schwarze Lider mit Blinzeln, wie bei Java; die Bewegung wird vom Gerät selbst abgespielt, damit sie flüssig läuft",
+  "why": "Bedrock-Spieler sollen den Einstieg der Demo genauso erleben wie Java-Spieler; die bisherige einfache Schwarzblende wirkte nicht wie ein Aufwachen",
+  "status": "in_progress",
+  "source": null
+}
