@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "kind": "added",
+  "summary": "Webseite: weitere Inhalte für die Ansicht Fortschrittlich",
+  "why": "Wer die fortgeschrittene Ansicht nutzt, findet jetzt mehr zu entdecken; Simple bleibt unverändert der Standard",
+  "status": "done",
+  "source": null
+}
