@@ -13,10 +13,13 @@ Jeder Agent schreibt ausschließlich eigene neue JSON-Dateien nach `devlog/inbox
   "date": "2026-10-11",
   "summary": "Das Profilmenü ist leichter zu bedienen",
   "why": "Spieler finden ihre Einstellungen schneller",
+  "kind": "changed",
   "status": "done",
   "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/123"
 }
 ```
+
+`kind` (optional) beschreibt die Art der Änderung: `added` (neu hinzugefügt), `changed` (geändert), `removed` (entfernt), `fixed` (behoben) oder `researched` (untersucht/geplant). Der Wochenartikel gliedert danach in „Neu hinzugefügt“, „Geändert“, „Entfernt“, „Behoben“ und „Untersucht und geplant“; Einträge ohne `kind` erscheinen wie bisher nach Status. Bei neuen Einträgen bitte immer `kind` setzen.
 
 `status` ist `done`, `in_progress` oder `blocked`. `source` ist eine GitHub-Issue-/PR-URL oder `null`. Nur tatsächlich geleistete, öffentlich kommunizierbare Arbeit melden. Keine Zugangsdaten, internen URLs, Spielernamen, privaten Daten, unveröffentlichten Sicherheitsdetails oder Rohlogs eintragen. Der Validator sperrt typische Geheimnis-Muster, ersetzt aber keine menschliche Prüfung. **Das Repository ist öffentlich; auch Entwürfe und Branches sind einsehbar.**
 
