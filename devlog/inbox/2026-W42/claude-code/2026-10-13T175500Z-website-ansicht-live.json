@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "kind": "added",
+  "summary": "Webseite: Ansicht Simple oder Fortschrittlich ist jetzt für alle Besucher verfügbar",
+  "why": "Besucher wählen selbst, wie fortgeschritten die Seite wirkt; die Wahl bleibt im Browser erhalten und Simple bleibt der Standard",
+  "status": "done",
+  "source": null
+}
