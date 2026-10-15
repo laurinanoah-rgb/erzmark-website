@@ -15,6 +15,16 @@ WEEK = re.compile(r"^\d{4}-W\d{2}$")
 SECRET = re.compile(r"(?i)(password|passwd|secret|token|api[_-]?key|private[_-]?key|authorization\s*:|bearer\s+|\.env\b)")
 ALLOWED_STATUS = {"done", "in_progress", "blocked"}
 FIELDS = {"schema_version", "agent", "date", "summary", "why", "status", "source"}
+OPTIONAL_FIELDS = {"kind"}
+# Art der Änderung (optional, damit ältere Einträge gültig bleiben); Reihenfolge = Reihenfolge im Artikel
+KINDS = {
+    "added": "Neu hinzugefügt",
+    "changed": "Geändert",
+    "removed": "Entfernt",
+    "fixed": "Behoben",
+    "researched": "Untersucht und geplant",
+}
+STATUS_NOTE = {"in_progress": " (in Arbeit)", "blocked": " (braucht noch Klärung)"}
 
 
 def week_of(day):
@@ -43,8 +53,10 @@ def markdown_text(value):
 
 def validate_entry(path, week):
     data = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict) or set(data) != FIELDS or data["schema_version"] != 1:
+    if not isinstance(data, dict) or not FIELDS <= set(data) <= FIELDS | OPTIONAL_FIELDS or data["schema_version"] != 1:
         raise ValueError(f"{path}: unexpected schema")
+    if "kind" in data and data["kind"] not in KINDS:
+        raise ValueError(f"{path}: invalid kind")
     agent = data["agent"]
     if not isinstance(agent, str) or not ID.fullmatch(agent) or path.parent.name != agent:
         raise ValueError(f"{path}: agent and directory must match")
@@ -80,22 +92,30 @@ def build(week):
     friday = date.fromordinal(monday.toordinal() + 4).isoformat()
     entries = load_week(week)
     public = [{**item, "id": path.stem} for path, item in entries]
-    groups = [
+    status_groups = [
         ("done", "Das ist fertig"),
         ("in_progress", "Daran arbeiten wir"),
         ("blocked", "Das braucht noch Klärung"),
     ]
+
+    def bullet(item):
+        source = f" [Mehr dazu]({item['source']})." if item["source"] else ""
+        note = STATUS_NOTE.get(item["status"], "")
+        return f"- **{markdown_text(item['summary'])}**{note} — {markdown_text(item['why'])}.{source}"
+
     lines = []
     if entries:
         lines += ["Diese Woche hat sich bei Erzmark einiges bewegt. Hier sind die Änderungen und der Grund, warum wir daran arbeiten.", ""]
-        for status, heading in groups:
-            matching = [item for _, item in entries if item["status"] == status]
+        # 1) Einträge mit Art der Änderung: Neu / Geändert / Entfernt / Behoben / Untersucht
+        for kind, heading in KINDS.items():
+            matching = [item for _, item in entries if item.get("kind") == kind]
             if matching:
-                lines += [f"## {heading}", ""]
-                for item in matching:
-                    source = f" [Mehr dazu]({item['source']})." if item["source"] else ""
-                    lines += [f"- **{markdown_text(item['summary'])}** — {markdown_text(item['why'])}.{source}"]
-                lines.append("")
+                lines += [f"## {heading}", ""] + [bullet(item) for item in matching] + [""]
+        # 2) Ältere Einträge ohne Art: wie bisher nach Status
+        for status, heading in status_groups:
+            matching = [item for _, item in entries if "kind" not in item and item["status"] == status]
+            if matching:
+                lines += [f"## {heading}", ""] + [bullet({**item, "status": "done"}) for item in matching] + [""]
     else:
         lines += ["Für diese Woche liegen noch keine geprüften Änderungen vor.", ""]
     markdown = "\n".join(lines).rstrip() + "\n"

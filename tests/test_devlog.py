@@ -44,6 +44,28 @@ class DevlogTest(unittest.TestCase):
         self.assertIn("## Das ist fertig", article)
         self.assertNotIn("# 2026-10-09", article)
 
+    def test_kind_groups_article_and_is_optional(self):
+        self.entry["kind"] = "added"
+        self.save()
+        second = self.entry_path.parent / "2026-10-09T130000Z-def.json"
+        second.write_text(json.dumps({**self.entry, "kind": "removed", "summary": "Alte Seite entfernt",
+                                      "status": "in_progress"}), encoding="utf-8")
+        legacy = self.entry_path.parent / "2026-10-09T140000Z-ghi.json"
+        legacy_entry = {k: v for k, v in self.entry.items() if k != "kind"}
+        legacy_entry["summary"] = "Ältere Meldung ohne Art"
+        legacy.write_text(json.dumps(legacy_entry), encoding="utf-8")
+        _, article = tool.build("2026-W41")
+        self.assertLess(article.index("## Neu hinzugefügt"), article.index("## Entfernt"))
+        self.assertIn("(in Arbeit)", article)
+        self.assertIn("## Das ist fertig", article)
+        self.assertIn("Ältere Meldung ohne Art", article)
+
+    def test_rejects_unknown_kind(self):
+        self.entry["kind"] = "gelöscht"
+        self.save()
+        with self.assertRaises(ValueError):
+            tool.build("2026-W41")
+
     def test_rejects_secret_and_wrong_week(self):
         self.entry["summary"] = "API token updated"
         self.save()
