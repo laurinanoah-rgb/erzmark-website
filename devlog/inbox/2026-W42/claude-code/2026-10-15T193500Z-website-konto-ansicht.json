@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-15",
+  "kind": "added",
+  "summary": "Webseite: Ansicht und Fortschritt werden mit dem Konto gespeichert",
+  "why": "Wer angemeldet ist, behält die gewählte Ansicht und das Entdeckte auf jedem Gerät; Gäste bleiben beim Speicher ihres Browsers",
+  "status": "done",
+  "source": null
+}
