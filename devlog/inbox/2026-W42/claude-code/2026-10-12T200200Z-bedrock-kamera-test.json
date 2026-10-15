@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-12",
+  "summary": "Machbarkeitstest für Bedrock-Kamerafahrten (Aufwachen, Schwert ziehen) begonnen: ein Testbefehl steuert Kamera, Blenden und Wackeln über die Geyser-Kamera-Schnittstelle",
+  "why": "Bedrock-Spieler sollen die Kino-Szenen der Demo irgendwann genauso erleben wie Java-Spieler",
+  "status": "in_progress",
+  "source": null
+}

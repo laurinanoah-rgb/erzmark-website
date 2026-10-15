@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-12",
+  "summary": "Bedrock-Spieler sehen Demo-Gespräche jetzt im Look der Java-Dialoge: Textbox am unteren Rand mit Porträt, Namensleiste, antippbaren Antworten und einem Aufdeck-Effekt statt eines Vollbild-Fensters",
+  "why": "Konsolen- und Handy-Spieler sollen dieselbe Atmosphäre erleben wie Java-Spieler; die bisherigen Standard-Fenster wirkten wie ein Fremdkörper",
+  "status": "in_progress",
+  "source": null
+}
