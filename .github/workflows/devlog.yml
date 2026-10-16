@@ -13,7 +13,8 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 jobs:
   validate:
@@ -45,10 +46,27 @@ jobs:
           else
             echo "value=$(date -u +%G-W%V)" >> "$GITHUB_OUTPUT"
           fi
-      - name: Generate review artifact
-        run: python tools/devlog.py preview '${{ steps.week.outputs.value }}' --out devlog-preview
+      - name: Generate review files
+        run: python tools/devlog.py preview '${{ steps.week.outputs.value }}' --out 'devlog/previews/${{ steps.week.outputs.value }}'
       - uses: actions/upload-artifact@v4
         with:
           name: devlog-${{ steps.week.outputs.value }}-review
-          path: devlog-preview/
+          path: devlog/previews/${{ steps.week.outputs.value }}/
           retention-days: 30
+      - name: Open weekly review pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: devlog/weekly-preview-${{ steps.week.outputs.value }}
+          add-paths: devlog/previews/${{ steps.week.outputs.value }}/
+          commit-message: 'Devlog draft: ${{ steps.week.outputs.value }}'
+          title: 'Devlog-Entwurf: ${{ steps.week.outputs.value }}'
+          body: |
+            Automatisch erzeugter Wochenentwurf zur redaktionellen Prüfung.
+
+            - Prüfe Fakten, Quellen, Status und öffentliche Eignung.
+            - Der Titel im Export ist nur das Freitagsdatum.
+            - Dieser PR veröffentlicht nichts auf erzmark.de.
+            - Live-Veröffentlichung bleibt ein separater, ausdrücklich freizugebender CMS-Schritt.
+          draft: true
+          delete-branch: true
