@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-16",
+  "kind": "added",
+  "summary": "Neue Tastenhinweise im Spiel: Tastenkappen für Tastatur, Xbox, PlayStation, Switch und Touch",
+  "why": "Hinweise zu Steuerung und Interaktion sind schärfer und einheitlicher; auf Java und Bedrock gleich, der Test auf allen Geräten steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

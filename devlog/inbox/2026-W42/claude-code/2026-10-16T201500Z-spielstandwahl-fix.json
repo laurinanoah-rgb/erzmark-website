@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-16",
+  "kind": "fixed",
+  "summary": "Einstieg: Spielstandwahl für Spieler mit bestehendem Spielstand repariert, neues Spielstand-Menü für alle",
+  "why": "Ein Spieler kam bei Abenteuer fortsetzen nur in die Sprachwahl und nicht weiter, weil Konto und Spielstand intern falsch zugeordnet waren; jetzt öffnet sich die Spielstandwahl",
+  "status": "done",
+  "source": null
+}
