@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Plan für den Weg der Handwerks-Stationen auf Bedrock und in die Live-Welt erstellt",
+  "why": "Die Stationen laufen bisher nur im Testbetrieb. Der Plan nennt die Unterschiede zwischen Test- und Live-Stand, die Risiken für Bedrock und einen geprüften Ablauf mit Rückweg, damit der Rollout kontrolliert und ohne Ausfälle erfolgen kann.",
+  "kind": "researched",
+  "status": "in_progress",
+  "source": null
+}
