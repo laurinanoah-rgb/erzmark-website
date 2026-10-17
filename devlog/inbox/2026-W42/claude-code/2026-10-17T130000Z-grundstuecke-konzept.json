@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "kind": "researched",
+  "summary": "Konzept und Phasenplan für das Grundstücks-System auf der offenen Welt: frei beanspruchbare Flächen ohne starres Raster, mit Menü, Einstellungen, Verschieben und Zurücksetzen",
+  "why": "Spieler sollen überall außer in Städten, Dörfern, Straßen, Ruinen, Lava und Ozean ein Grundstück beanspruchen, es mit Freunden teilen und bei weiten Reisen mitnehmen können; Planung mit Optimierung als Vorgabe, noch nichts gebaut",
+  "status": "in_progress",
+  "source": null
+}
