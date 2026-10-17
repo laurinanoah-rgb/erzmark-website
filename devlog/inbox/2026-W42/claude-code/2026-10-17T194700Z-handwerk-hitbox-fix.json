@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Kollisionsblöcke der mehrteiligen Möbel in die richtige Richtung gesetzt",
+  "why": "Nach einem Hinweis aus dem Test lagen die Hitboxen der Rüstungsschmiede hinter dem Modell. Jetzt sitzen sie vor der Station, sodass man sie wie erwartet anklicken kann.",
+  "kind": "fixed",
+  "status": "done",
+  "source": null
+}
