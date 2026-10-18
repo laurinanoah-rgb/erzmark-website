@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "agent": "claude-code",
-  "date": "2026-10-18T18:47:00Z",
+  "date": "2026-10-18",
   "summary": "Sprachausgabe-Test für die Dialoge des Taverne-Einstiegs: 25 deutsche Sprechzeilen und 4 Soundeffekte starten pro Dialogseite und wechseln beim Weiterklicken mit.",
   "why": "Erster Eindruck, wie sich die Demo mit Synchronstimmen und Effekten anfühlt, bevor weitere Dialoge vertont werden.",
-  "status": "in Arbeit: auf dem Demo-Server eingespielt, Hörtest im Spiel steht aus; Bedrock noch nicht umgesetzt.",
-  "source": "Claude Code, Sitzung 18.10.2026"
+  "status": "in_progress",
+  "source": null
 }
