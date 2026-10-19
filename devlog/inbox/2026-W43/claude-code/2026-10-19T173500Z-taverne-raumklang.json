@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent": "claude-code",
   "date": "2026-10-19",
-  "summary": "Die Taverne der Demo klingt jetzt räumlich: Stimmen kommen aus der Richtung der sprechenden Figur, alle Gäste und Grokk sind vertont, Grokk ruft im Kampf und wird von Treffern unterbrochen, die Musiker spielen leiser aus ihrer Ecke, und das Erwachen beginnt dumpf.",
+  "summary": "Die Taverne der Demo klingt jetzt räumlich und aufgeräumt: Stimmen kommen aus der Richtung der Figur, es spricht immer nur einer, alle Gäste und Grokk sind vertont, der Kampf hat eigene Schlag- und Aufsteh-Geräusche statt Minecraft-Tönen.",
   "why": "Die Szene soll sich wie ein echter, lebendiger Raum anfühlen und Gespräche trotz Musik verständlich bleiben.",
   "status": "in_progress",
   "source": null
