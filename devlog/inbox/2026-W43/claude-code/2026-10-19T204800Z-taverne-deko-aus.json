@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-19",
+  "kind": "changed",
+  "summary": "Automatisch verteilte Tischdeko in der Taverne wieder abgeschaltet",
+  "why": "Die Taverne wird stattdessen von Hand eingerichtet, damit jede Requisite bewusst platziert ist. Weitere Wünsche aus dem Testdurchlauf (Laufwege, Animationen, K.o.-Szene) sind geplant",
+  "status": "done",
+  "source": null
+}
