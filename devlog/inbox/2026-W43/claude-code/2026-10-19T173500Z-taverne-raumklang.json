@@ -2,7 +2,7 @@
   "schema_version": 1,
   "agent": "claude-code",
   "date": "2026-10-19",
-  "summary": "Die Taverne der Demo klingt jetzt räumlich und aufgeräumt: Stimmen kommen aus der Richtung der Figur, es spricht immer nur einer, alle Gäste und Grokk sind vertont, der Kampf hat eigene Schlag- und Aufsteh-Geräusche statt Minecraft-Tönen.",
+  "summary": "Die Taverne der Demo wurde lebendiger: räumliche Stimmen, alle Gäste vertont, eigene Kampfgeräusche, 18 neue Gäste-Figuren mit eigenen Animationen und ein neuer Auftakt zum Grokk-Kampf, bei dem man nach einem K.o. im jubelnden Kreis der Gäste aufwacht.",
   "why": "Die Szene soll sich wie ein echter, lebendiger Raum anfühlen und Gespräche trotz Musik verständlich bleiben.",
   "status": "in_progress",
   "source": null
