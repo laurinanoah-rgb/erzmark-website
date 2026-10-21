@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-21",
+  "summary": "Erster Prototyp: In Story-Szenen steuern Spieler eine kleine Spielfigur selbst (Laufen, Ducken, Sprinten) mit Kamera hinter der Schulter",
+  "why": "Szenen sollen sich erlebbar anfühlen statt nur als Zwischensequenz abzulaufen. Ein Testparcours mit Treppen, Türen, Wasser und Slalom läuft auf einem Testserver; der Spieltest steht noch aus.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}
