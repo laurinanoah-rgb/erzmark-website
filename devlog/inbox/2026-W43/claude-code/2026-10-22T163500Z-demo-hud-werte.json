@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-22",
+  "kind": "fixed",
+  "summary": "Demo-HUD zeigt wieder echte Werte statt Platzhaltertext bei Stufe und zweitem Balken",
+  "why": "Auf dem Demo-Server fehlt das Klassen- und Mana-System; die Anzeige nutzt dort jetzt Stufe 1 und die Ausdauer, damit das Profil oben links sauber aussieht",
+  "status": "done",
+  "source": null
+}
