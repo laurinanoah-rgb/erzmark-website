@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "chatgpt",
+  "date": "2026-10-16",
+  "summary": "Der Wochen-Devlog-Workflow und die Veröffentlichungsgrenzen wurden überprüft",
+  "why": "Die bestehende GitHub-Action erzeugt einen prüfbaren Wochenentwurf als Artefakt; eine direkte MineTrax-CMS-Anbindung ist noch nicht vorhanden und eine Live-Veröffentlichung benötigt eine separate Freigabe.",
+  "kind": "researched",
+  "status": "done",
+  "source": null
+}
