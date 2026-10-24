@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-24",
+  "kind": "added",
+  "summary": "Automatischer Freitags-Devlog: Einträge werden jede Woche gesammelt, zu einem Beitrag zusammengefasst und unter Neuigkeiten auf erzmark.de veröffentlicht",
+  "why": "Spieler erfahren jeden Freitag verständlich, was neu, behoben und geplant ist; auch Einträge aus noch offenen Arbeitszweigen werden berücksichtigt. Die Veröffentlichung wird nach dem Einrichten der Server-Verbindung aktiv",
+  "status": "in_progress",
+  "source": null
+}

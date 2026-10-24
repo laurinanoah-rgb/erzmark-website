@@ -1,0 +1,91 @@
+name: Devlog auf erzmark.de veröffentlichen
+
+# Sobald ein Beitrag unter devlog/posts/YYYY-MM-DD.md auf main landet,
+# wird er per SSH als MineTrax-News (Kategorie "Dev") angelegt bzw. aktualisiert.
+#
+# Benötigte Repository-Secrets (Settings → Secrets and variables → Actions):
+#   DEVLOG_SSH_HOST   Server-Adresse
+#   DEVLOG_SSH_USER   Benutzer, dem /var/www/minetrax gehört (bzw. der php dort ausführen darf)
+#   DEVLOG_SSH_KEY    privater SSH-Schlüssel (nur für diesen Zweck angelegt)
+# Optional:
+#   DEVLOG_SSH_PORT   Standard 22
+#   DEVLOG_AUTHOR_ID  MineTrax-User-ID des Autors (sonst Autor des letzten Beitrags)
+#   MINETRAX_PATH     Standard /var/www/minetrax
+
+on:
+  push:
+    branches: [main]
+    paths: ['devlog/posts/*.md']
+  workflow_dispatch:
+    inputs:
+      post:
+        description: 'Beitrag, z. B. devlog/posts/2026-10-23.md'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: devlog-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Beiträge bestimmen
+        id: posts
+        env:
+          INPUT_POST: ${{ inputs.post }}
+        run: |
+          if [ -n "$INPUT_POST" ]; then
+            files="$INPUT_POST"
+          else
+            files=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'devlog/posts/*.md' | tr '\n' ' ')
+          fi
+          for f in $files; do
+            [[ "$f" =~ ^devlog/posts/[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$ ]] || { echo "Ungültiger Pfad: $f"; exit 1; }
+            [ -f "$f" ] || { echo "Fehlt: $f"; exit 1; }
+          done
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "Beiträge: ${files:-keine}"
+
+      - name: Secrets prüfen
+        id: secrets
+        env:
+          HOST: ${{ secrets.DEVLOG_SSH_HOST }}
+        run: |
+          if [ -z "$HOST" ]; then
+            echo "::warning::DEVLOG_SSH_* Secrets fehlen – Beitrag liegt im Repo, wurde aber nicht veröffentlicht."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Auf erzmark.de veröffentlichen
+        if: steps.posts.outputs.files != '' && steps.secrets.outputs.ok == 'true'
+        env:
+          HOST: ${{ secrets.DEVLOG_SSH_HOST }}
+          USER_NAME: ${{ secrets.DEVLOG_SSH_USER }}
+          KEY: ${{ secrets.DEVLOG_SSH_KEY }}
+          PORT: ${{ secrets.DEVLOG_SSH_PORT || '22' }}
+          AUTHOR_ID: ${{ secrets.DEVLOG_AUTHOR_ID }}
+          MINETRAX: ${{ secrets.MINETRAX_PATH || '/var/www/minetrax' }}
+          FILES: ${{ steps.posts.outputs.files }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/devlog && chmod 600 ~/.ssh/devlog
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          SSH="ssh -i $HOME/.ssh/devlog -p $PORT -o BatchMode=yes $USER_NAME@$HOST"
+          $SSH 'mkdir -p ~/devlog-publish'
+          scp -i ~/.ssh/devlog -P "$PORT" -o BatchMode=yes tools/minetrax_publish_devlog.php $FILES "$USER_NAME@$HOST:devlog-publish/"
+          for f in $FILES; do
+            name=$(basename "$f")
+            $SSH "php ~/devlog-publish/minetrax_publish_devlog.php '$MINETRAX' ~/devlog-publish/$name '$AUTHOR_ID'"
+          done
+          rm -f ~/.ssh/devlog
