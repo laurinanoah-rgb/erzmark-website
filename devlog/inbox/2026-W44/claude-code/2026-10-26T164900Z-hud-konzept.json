@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-26",
+  "summary": "Konzept für ein übersichtliches Spiel-HUD auf dem Testserver erarbeitet: Goldmünzen, Status, Fähigkeiten und sichtbare Auslöser.",
+  "why": "Spieler sollen Ressourcen und verfügbare Aktionen schnell erkennen. Java und Bedrock benötigen passende Tasten- und Gerätesymbole.",
+  "status": "done",
+  "source": null
+}
+
