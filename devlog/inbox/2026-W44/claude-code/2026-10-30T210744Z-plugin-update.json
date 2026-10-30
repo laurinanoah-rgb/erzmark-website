@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-30",
+  "summary": "Neun laufende Minecraft-Dienste mit aktualisierten Plugin-Dateien neu gestartet; Spielwelten und Plugin-Daten aus Sicherungen erhalten. Eine neue Bedrock-HUD-Kompatibilitätswarnung ist noch offen.",
+  "why": "Die Plugin-Versionen sind vereinheitlicht und die Spielstände beim CloudNet-Neustart erhalten. Das Bedrock-HUD benötigt noch eine Anpassung an die neue Scaffolding-Schnittstelle.",
+  "status": "in_progress",
+  "source": null
+}
