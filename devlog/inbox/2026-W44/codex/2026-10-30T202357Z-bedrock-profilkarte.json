@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "codex",
+  "date": "2026-10-30",
+  "summary": "Bedrock-Profilkarte für Test- und Demo-Server lokal überarbeitet",
+  "why": "Kopf, Balken und Texte waren auf Test-1 auseinandergezogen und auf Demo-1 teilweise überlagert. Ein eigener Bedrock-Profilkanal und klare Textausrichtung sollen die Anzeige vereinheitlichen.",
+  "status": "in_progress",
+  "source": null
+}
