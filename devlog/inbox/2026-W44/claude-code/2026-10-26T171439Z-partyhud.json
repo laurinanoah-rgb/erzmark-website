@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-26",
+  "summary": "Party-Anzeige unter dem eigenen Profil vorbereitet. Java und Bedrock lassen den eigenen Spieler aus und rücken andere Mitglieder nach.",
+  "why": "Die Profilkarte zeigt den Spieler bereits. Die Party-Liste bleibt dadurch übersichtlich und nutzt den Platz für Mitspieler.",
+  "status": "in_progress",
+  "source": null
+}
+
