@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-31",
+  "summary": "Die technische Übergabe zum Minecraft-Plugin-Update wurde für die Weiterarbeit ergänzt.",
+  "why": "Offene Bedrock-Prüfungen, Kompatibilitätswarnungen und der sichere Umgang mit den Server-Sicherungen sind nun für die nächste Arbeitssitzung nachvollziehbar.",
+  "status": "done",
+  "source": null
+}
