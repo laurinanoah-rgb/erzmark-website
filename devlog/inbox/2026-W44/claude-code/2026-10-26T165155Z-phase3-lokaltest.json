@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-26",
+  "summary": "Ein isolierter Testverbund mit Proxy und drei Spielservern wurde erfolgreich gestartet. Der Demo-Router liest neue Spielstände nun ohne vorzeitige Änderung des Fortschritts. Automatisierte Router- und Datenbankprüfungen bestanden.",
+  "why": "Das verhindert veränderte Spielstände bei einem gescheiterten Bereichswechsel und schafft eine Grundlage für echte Spieltests mit zwei Profilen.",
+  "status": "in_progress",
+  "source": null
+}
