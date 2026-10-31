@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-31",
+  "kind": "fixed",
+  "summary": "Bedrock-Anzeige für Party und Profil: Anpassung an die neue Scaffolding-Version vorbereitet und getestet; noch nicht eingespielt",
+  "why": "Nach dem Plugin-Update lief die Bedrock-Anzeige nur noch über einen Notweg, der sich mit anderen Anzeigen überlagern kann. Die neue Fassung vereint den aktiven Stand mit der Profilkorrektur. Der Test auf einem Bedrock-Gerät steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
