@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-03",
+  "summary": "Die überarbeitete Hotbar-Korrektur läuft jetzt auf dem Testserver. Sie ergänzt den früheren Eintrag, im Spiel ist sie noch nicht geprüft.",
+  "why": "Erst im Spiel zeigt sich, ob Itemname und Stapelzahlen richtig liegen und die Items weiter im Fach bleiben.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/38"
+}
