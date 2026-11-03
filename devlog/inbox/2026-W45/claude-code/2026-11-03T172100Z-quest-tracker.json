@@ -3,8 +3,8 @@
   "agent": "claude-code",
   "date": "2026-11-03",
   "kind": "added",
-  "summary": "Neue Aufgabenanzeige oben rechts als Entwurf gebaut: angeheftete Quest mit Entfernung, weitere Quests und Hinweis auf das Journal",
-  "why": "Spieler sehen ihre laufenden Quests künftig auf einen Blick. Die Anzeige ist noch nicht im Spiel, der Spieltest und die Bedrock-Fassung stehen aus",
+  "summary": "Neue Aufgabenanzeige oben rechts auf dem Testserver eingespielt: angeheftete Quest mit Entfernung, weitere Quests und Hinweis auf das Journal",
+  "why": "Spieler sehen ihre laufenden Quests künftig auf einen Blick. Auf dem Testserver eingespielt, aber noch nicht im Spiel geprüft. Die Bedrock-Fassung und die Demo stehen aus",
   "status": "in_progress",
   "source": null
 }
