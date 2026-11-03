@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Für aktive Java-Hotbar-Items wird auf dem Testserver eine ergänzende Positionserkennung erprobt.", "why": "Das ausgewählte Item kann in Kreativ und Survival unter die Slotreihe rutschen. Die Wirkung der Änderung im Spiel ist offen.", "status": "in_progress", "source": null}

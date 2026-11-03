@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Speicherbelegung geprüft und erneut herunterladbaren Installationscache bereinigt.", "why": "Die Bereinigung hat rund 4 GB freigegeben. Weitere Entlastung war für den zuverlässigen Betrieb nötig.", "status": "done", "source": null}

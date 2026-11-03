@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Das Nebenhand-Item der Java-Hotbar wurde einen GUI-Pixel nach links und unten verschoben.", "why": "Am Stein war oben rechts ein Beschnitt sichtbar. Die Sichtprüfung der Korrektur steht aus.", "status": "in_progress", "source": null}
