@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "codex",
+  "date": "2026-11-04",
+  "summary": "Die Darstellung echter Minecraft-Gegenstände im Loot-Feed wurde geprüft. Die vorhandenen Kategorie-Symbole sollen durch Ansichten der tatsächlichen Items ersetzt werden; eine technische Probe steht aus.",
+  "why": "Gefundene Beute soll im HUD genauso erkennbar sein wie im Inventar, auch bei eigenen Items.",
+  "kind": "researched",
+  "status": "in_progress",
+  "source": null
+}
