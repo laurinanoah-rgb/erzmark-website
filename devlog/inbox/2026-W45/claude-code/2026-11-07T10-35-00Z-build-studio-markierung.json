@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "changed",
+  "summary": "Build Studio zeigt die Vorschau jetzt ohne Partikel: Auf Java als leuchtenden Rahmen, auf Bedrock als Lichtlinien aus Blöcken, die nur der Spieler sieht. Dazu gibt es eigene, klar erkennbare Symbole für alle Bau-Werkzeuge",
+  "why": "Partikel sind auf Bedrock unruhig und schwer zu lesen. Rahmen und eigene Symbole machen sofort verständlich, was wo passiert. Auf einem Testserver eingespielt; die eigenen Grafiken werden erst nach einer Freigabe für alle Server ausgerollt",
+  "status": "in_progress",
+  "source": null
+}
