@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Build Studio zeigt vor dem Einfügen einen Umriss aus Partikeln, wo das Bauwerk landen wird, und kann Bauwerke jetzt auch spiegeln. Den Umriss sieht nur der Spieler selbst",
+  "why": "Bauen ohne Vorschau ist Rätselraten. Der Umriss dreht und spiegelt sich mit und wird bei sehr großen Bauwerken vereinfacht, damit nichts ruckelt. Auf einem Testserver eingespielt, die Sichtprüfung auf Java und Bedrock steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

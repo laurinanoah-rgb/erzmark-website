@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Build Studio zeigt beim Einfügen jetzt das ganze Bauwerk als Vorschau am Ziel, nicht nur einen Umriss. Die Anleitung steht in einer Seitenleiste rechts, und die Bau-Werkzeuge haben eigene Symbole",
+  "why": "So sieht man vor dem Einfügen genau, wie es aussehen wird, und nichts verdeckt mehr die Werkzeugnamen. Auf einem Testserver für Java und Bedrock eingespielt, der Test im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
