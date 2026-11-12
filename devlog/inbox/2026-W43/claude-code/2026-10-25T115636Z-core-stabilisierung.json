@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-25",
+  "summary": "Die Zuordnung zweier Spielstände und ihre Demo-Fortschritte wurden mit einer isolierten Testdatenbank geprüft. Ein Fehler beim Speichern der Identität wurde behoben. Der Demo-Router wurde vollständig gebaut und behandelt nicht verfügbare Ziele sicher.",
+  "why": "Spielstände dürfen bei einem Speicherausfall nicht vermischt werden. Ein fehlgeschlagener Bereichswechsel soll eine verständliche Meldung liefern, ohne den Profilfortschritt zu verändern.",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/26"
+}

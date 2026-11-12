@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-25",
+  "summary": "Projektstand von Spielständen, Demo, Transfers, Ressourcenpaketen und Crossplay geprüft und einen priorisierten Entwicklungsplan dokumentiert. Die Prüfung der Demo-Transfernachrichten wurde lokal erweitert und mit acht Tests geprüft.",
+  "why": "Der Plan macht offene Release-Nachweise sichtbar. Die zusätzliche Validierung verwirft fehlerhafte Transferanforderungen, bevor ein Bereichswechsel ausgelöst wird.",
+  "status": "in_progress",
+  "source": null
+}
