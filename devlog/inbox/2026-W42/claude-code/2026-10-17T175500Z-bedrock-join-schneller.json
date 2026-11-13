@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "kind": "changed",
+  "summary": "Bedrock-Beitritt beschleunigt: Das Resource-Pack ist von 113 auf rund 40 MB geschrumpft und wird per HTTPS statt über den langsamen Spielkanal geladen",
+  "why": "Der lange Ladebildschirm beim Bedrock-Beitritt hielt neue Spieler ab; Texturen sind komprimiert, das Pack wird nur noch bei bewussten Umbauten neu geladen. Messung auf einem echten Gerät steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
