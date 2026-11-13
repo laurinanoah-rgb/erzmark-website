@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Handwerksstufen: Erfahrung je Spielstand, gesperrte Rezepte und Meisterwerke",
+  "why": "Wer oft schmiedet, kocht oder webt, steigt im jeweiligen Handwerk auf und schaltet bessere Rezepte frei. Mit höherer Stufe gelingen häufiger gut gearbeitete Stücke und Meisterwerke mit stärkeren Werten.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

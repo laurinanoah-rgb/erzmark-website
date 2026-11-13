@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Drei weitere Handwerks-Stationen im Testbetrieb: Waffenbank, Schreinerei und Alchemietisch",
+  "why": "Jede Station hat eigene Animationen: Schleifrad mit Funken, Säge und Hobel mit Spänen, Mörser und blubbernder Kolben. So gibt es für Waffen, Möbelbau und Tränke eigene, hochwertig wirkende Werkbänke im Erzmark-Stil.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

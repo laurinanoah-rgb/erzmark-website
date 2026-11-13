@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Bedrock-Darstellung der neuen Handwerks-Stationen geprüft",
+  "why": "Die Stationen sollen auch auf Bedrock sichtbar sein. Der Weg über das gemeinsame Ressourcenpaket ist analysiert und wird mit dem Team abgestimmt, bevor etwas live geht.",
+  "kind": "researched",
+  "status": "in_progress",
+  "source": null
+}

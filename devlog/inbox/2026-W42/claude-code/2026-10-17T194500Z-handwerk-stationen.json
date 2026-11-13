@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Erste Handwerks-Stationen im Testbetrieb: Kochstelle und Rüstungsschmiede mit Animation",
+  "why": "Neue mehrteilige Möbel im mittelalterlichen Look. Beim Herstellen bewegen sich Hammer, Blasebalg, Kelle und Flammen, dazu kommen Funken, Dampf und Klang. Handwerk soll sich in Erzmark hochwertig anfühlen.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}
