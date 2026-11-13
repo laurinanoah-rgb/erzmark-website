@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Build Studio beachtet jetzt die Grundstücke: Auf fremden Grundstücken kann man nichts einfügen, die Vorschau färbt sich vorher rot und nennt den Besitzer",
+  "why": "Bau-Werkzeuge dürfen niemals fremde Bauwerke überschreiben. Es gelten dieselben Regeln wie beim Bauen von Hand, inklusive Rechten für Vertraute. Auf einem Testserver eingespielt, der Test im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

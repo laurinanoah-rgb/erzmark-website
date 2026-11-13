@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "changed",
+  "summary": "Build Studio zeigt die Auswahl jetzt als durchsichtige blaue Box mit feinen Kanten und farbigen Achsen. Im Bau-Modus werden Scoreboard, Bossbar und andere Anzeigen ausgeblendet und danach genau wie vorher wiederhergestellt",
+  "why": "Beim Bauen soll nichts vom Bauwerk ablenken, und die Box zeigt auf einen Blick Größe und Richtung. Auf einem Testserver eingespielt, der Test im Spiel steht noch aus; die durchsichtige Box für Bedrock ist als nächster Schritt geplant",
+  "status": "in_progress",
+  "source": null
+}
