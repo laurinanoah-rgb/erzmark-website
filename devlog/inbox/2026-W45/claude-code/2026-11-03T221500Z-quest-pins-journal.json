@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-03",
+  "kind": "added",
+  "summary": "Der Aufgaben-Tracker kann jetzt bis zu drei Quests anpinnen und unterscheidet Haupt- und Nebenquests. Wird eine angepinnte Quest abgeschlossen, rückt eine andere nach. Der Befehl /journal öffnet dafür ein eigenes Menü, das alte Questmodul von MMOCore ist auf dem Testserver aus.",
+  "why": "Spieler entscheiden damit selbst, welche Aufgaben sie im Blick behalten, und die Anzeige bleibt ohne Handgriff aktuell. Questdaten kommen nur noch aus einem System.",
+  "status": "in_progress",
+  "source": null
+}
