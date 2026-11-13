@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "summary": "Der Konsolen-Beitritt über die Xbox-Freundesliste funktioniert wieder",
+  "why": "Konsolenspieler sehen den Erzmark-Bot wieder online und können über ihn beitreten. Die Software ist aktualisiert und Freunde werden nicht mehr automatisch entfernt.",
+  "kind": "fixed",
+  "status": "done",
+  "source": null
+}
