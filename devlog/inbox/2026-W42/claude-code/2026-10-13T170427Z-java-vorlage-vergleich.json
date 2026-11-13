@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Java-Aufwachszene Bild für Bild ausgewertet und mit der Bedrock-Fassung verglichen",
+  "why": "Der Vergleich zeigte, dass die Lider bei Java als weiche Öffnung in Schwarz erscheinen und nicht als zwei Balken. Die neue Bedrock-Fassung weicht in der Simulation im Mittel weniger als ein Prozent von der Java-Vorlage ab.",
+  "kind": "researched",
+  "status": "done",
+  "source": null
+}

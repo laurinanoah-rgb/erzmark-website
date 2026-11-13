@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Bedrock-Spieler bekommen die Aufwach-Animation mit flüssig öffnenden Augenlidern wie in der Java-Fassung",
+  "why": "Die bisherige Bedrock-Fassung sah anders aus und ruckelte. Die neue folgt derselben Kurve wie Java: weiche Öffnung, Dunst, Herzschlag und Blinzeln, vom Gerät flüssig abgespielt. Gebaut und geprüft, Gerätetest und Freigabe stehen noch aus.",
+  "kind": "changed",
+  "status": "in_progress",
+  "source": null
+}
