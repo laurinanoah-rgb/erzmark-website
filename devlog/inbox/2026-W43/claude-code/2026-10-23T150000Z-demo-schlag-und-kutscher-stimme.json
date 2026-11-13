@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-23",
+  "kind": "fixed",
+  "summary": "Demo-Taverne: Grokks Faustschlag wird später ausgelöst, damit man ihn sieht; die Stimme des Kutschers Jorun fährt jetzt mit der Kutsche mit",
+  "why": "Bisher ging der Spieler vor dem sichtbaren Schlag zu Boden, und Jorun klang während der Fahrt immer leiser, weil seine Stimme am Startpunkt stehen blieb. Noch nicht im Spiel getestet.",
+  "status": "in_progress",
+  "source": null
+}
