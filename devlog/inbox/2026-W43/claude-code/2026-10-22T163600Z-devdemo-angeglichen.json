@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-22",
+  "kind": "changed",
+  "summary": "Entwicklungs-Kopie der Demo auf den aktuellen Stand der Live-Demo gebracht",
+  "why": "So kann ein späteres Übernehmen aus der Entwicklungs-Kopie die neuen Taverne-Verbesserungen nicht versehentlich mit einem älteren Stand überschreiben",
+  "status": "done",
+  "source": null
+}

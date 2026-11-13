@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-22",
+  "kind": "fixed",
+  "summary": "Fehler in der Taverne behoben: Jubel-Kreis passt sich dem Raum an, Gäste stehen an echten Tischen statt an der Treppe, niemand gleitet mehr durch Wände, die Wirtin findet ihren Weg über Treppen und um Bänke",
+  "why": "Der Testdurchlauf war stark verbuggt; die Ursachen wurden per Protokoll und Auswertung des Grundrisses gefunden. Erneuter Spieltest steht aus",
+  "status": "in_progress",
+  "source": null
+}
