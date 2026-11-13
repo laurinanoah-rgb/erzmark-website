@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Untersucht, welche Controller-Eingaben Bedrock-Spieler an den Server übertragen",
+  "why": "Ergebnis: Das Spiel überträgt keine physischen Tasten, nur logische Aktionen wie Bewegung, Springen oder Schleichen. Ein Steuerkreuz-Druck ist nur über die Belegung des Spielers sichtbar. Tests auf echten Konsolen stehen noch aus.",
+  "kind": "researched",
+  "status": "done",
+  "source": null
+}
