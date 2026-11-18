@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Demo: Der Kampfring gegen Grokk nutzt jetzt den ganzen Schankraum von der Wand bis zu den Stufen. Die Gäste stellen sich als Oval rundherum auf statt an eine Wand. Grokk spielt jetzt auch wirklich den neuen, gut sichtbaren Faustschlag.",
+  "why": "Teppiche auf dem Boden wurden als Hindernis gewertet. Dadurch blieb vom Raum nur ein schmaler Streifen übrig, und man wurde von allen Seiten zurückgeschoben. Eingespielt, die Rückmeldung aus dem Spiel steht noch aus.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}
