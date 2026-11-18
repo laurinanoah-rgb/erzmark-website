@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock: Das Ressourcenpaket für Bedrock-Spieler enthält jetzt das aktuelle Grokk-Modell mit allen neuen Bewegungen, darunter der neue Faustschlag aus dem Tavernen-Auftakt. Damit sehen Bedrock-Spieler denselben Schlag wie Java-Spieler. Beim nächsten Beitritt lädt das Spiel das Paket einmal neu.",
+  "why": "Bisher fehlten auf Bedrock mehrere neuere Grokk-Animationen, so dass der Kampfauftakt dort unvollständig wirkte. Die Szene auf dem Entwicklungsserver wartet noch auf den Test auf einem Bedrock-Gerät.",
+  "kind": "changed",
+  "status": "in_progress",
+  "source": null
+}
