@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock-Hauptmenü mit Charakterfläche, direktem Charakterwechsel und vier Menükacheln vorbereitet.",
+  "why": "Der ausgewählte Spielstand soll an Name und gespeicherter Ausrüstung erkennbar sein. Plugin und Ressourcenpaket sind gebaut und auf Konsistenz geprüft; Darstellung und Bedienung auf echten Bedrock-Geräten stehen noch aus.",
+  "status": "in_progress",
+  "source": null
+}
