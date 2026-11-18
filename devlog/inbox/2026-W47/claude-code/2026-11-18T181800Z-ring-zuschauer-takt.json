@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "kind": "changed",
+  "summary": "Demo (Java): Die Zuschauer im Kampfring klatschen jetzt im Takt der Kampfmusik und stehen schon im Kreis, wenn man aufwacht. Übrige Gäste tragen Bierkrüge über die Empore",
+  "why": "Der Kreis wirkt luftig wie bei einem Ringkampf, niemand steht mehr vor den Musikern oder zu mehreren auf einem Feld. Neue Klatsch- und Trage-Animationen machen die Taverne lebendiger. Abnahme im Spiel steht aus",
+  "status": "in_progress",
+  "source": null
+}
