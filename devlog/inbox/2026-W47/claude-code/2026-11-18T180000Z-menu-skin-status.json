@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock-Hauptmenü: Übernahme des eigenen Skins überarbeitet, Körperdrehung ergänzt, untere Bedienleiste ausgerichtet und grafischen Entwicklungsstatus hinzugefügt.",
+  "why": "Die Charaktervorschau soll verlässlich zum Spieler passen. Einheitliche Abstände und der Hinweis auf den unveröffentlichten Entwicklungsstand verbessern die Orientierung.",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/46"
+}

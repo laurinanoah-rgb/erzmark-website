@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Nach einem fehlerhaften Bedrock-Sichttest wurden Kameraabstand und Menügröße erneut korrigiert.",
+  "why": "Die erste Referenzfassung zeigte eine stark vergrößerte Figur und kaum Menüelemente. Die Kamera wurde vom Spielerkörper getrennt und die Menüfläche begrenzt. Die Korrektur ist eingespielt; eine erfolgreiche erneute Sichtabnahme steht noch aus.",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/46"
+}
