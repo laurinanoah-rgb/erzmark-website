@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Die Menü-Taverne erhält zwei Tische, vier Stühle, Laternen und drei Tavernengäste. Charakterbühne, Licht, Profilkarte und Kachelhintergründe wurden abgestimmt; XP-Text und deutsche Levelanzeige überarbeitet.",
+  "why": "Eine eingerichtete, dezent bewegte Taverne gibt dem Hauptmenü Atmosphäre. Freie Sicht auf die Figur und ruhige, einheitliche Oberflächen verbessern die Orientierung. Die Einrichtung wird mit Wiederherstellungsjournal verwaltet.",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/46"
+}
