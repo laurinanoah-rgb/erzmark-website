@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "kind": "changed",
+  "summary": "Demo (Java): Grokks K.-o.-Schlag läuft jetzt in Zeitlupe. Man sieht ihn ausholen, dann fährt die Kamera heran, bis seine Faust ins Bild trifft",
+  "why": "Der eigentliche Schwinger dauerte nur etwa drei Spielticks und war deshalb kaum zu sehen. Jetzt ist der Schlag lesbar und wirkt wie eine richtige Filmszene. Die Abnahme im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
