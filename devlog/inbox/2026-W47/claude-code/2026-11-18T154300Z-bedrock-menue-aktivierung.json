@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Das neue Bedrock-Hauptmenü mit Charakterwechsel und Charaktervorschau wurde aktiviert.",
+  "why": "Der ausgewählte Charakter soll direkt im Hauptmenü erkennbar sein. Der Menüserver startet mit der neuen Version und das Ressourcenpaket ist erreichbar; der Sicht- und Bedienungstest auf echten Bedrock-Geräten steht noch aus.",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/46"
+}
