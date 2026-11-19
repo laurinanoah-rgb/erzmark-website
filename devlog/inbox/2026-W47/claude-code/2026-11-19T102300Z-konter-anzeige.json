@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-19",
+  "kind": "changed",
+  "summary": "Demo (Java): Grokks harter Schlag zeigt jetzt eine eigene Konter-Anzeige über seinem Kopf statt gelber Partikel. Ein Ring schließt sich bis zum Treffer, bei perfektem Ausweichen erscheint eine Konter-Faust",
+  "why": "Man erkennt sofort, wann man ausweichen muss und wann ein Konter möglich ist, ähnlich wie in bekannten Actionspielen. Die Abnahme im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
