@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Neues Augenlid-Overlay und Kamera-Plugin für Bedrock-Spieler sind auf dem Proxy eingespielt",
+  "why": "Das Overlay lässt sich jetzt am Gerät testen. Die Szene in der Demo selbst ist noch nicht umgeschaltet, das passiert erst nach dem Gerätetest.",
+  "kind": "changed",
+  "status": "in_progress",
+  "source": null
+}
