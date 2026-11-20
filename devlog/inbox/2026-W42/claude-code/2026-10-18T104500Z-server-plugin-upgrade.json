@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Alle Erzmark-Server laufen jetzt auf aktuellen Versionen: neuer Spielserver-Build (Paper 26.2), neuer Proxy (Velocity 4.2) sowie aktualisierte Premium- und freie Plugins",
+  "why": "Aktuelle Versionen bringen Fehlerbehebungen und Sicherheitsupdates. Plugins mit zu neuer Anforderung (Minecraft 26.3) wurden bewusst nicht eingespielt, damit nichts bricht",
+  "kind": "changed",
+  "status": "done",
+  "source": null
+}
