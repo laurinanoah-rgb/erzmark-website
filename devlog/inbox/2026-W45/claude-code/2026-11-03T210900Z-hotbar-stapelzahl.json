@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-03",
+  "summary": "Auf dem Testserver wird die Stapelzahl im ausgewählten Hotbar-Fach jetzt anders erkannt, damit sie nicht mehr unter dem Rahmen bleibt. Im Spiel noch ungeprüft.",
+  "why": "Im Spieltest blieb die Zahl im ausgewählten Fach an der alten Stelle, im Nebenhandfach saß sie richtig.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/38"
+}

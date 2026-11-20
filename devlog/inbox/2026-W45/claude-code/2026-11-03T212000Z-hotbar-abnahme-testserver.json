@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-03",
+  "summary": "Die Java-Hotbar ist auf dem Testserver im Spiel abgenommen: Stapelzahl und Itemname passen. Auf den Demo-Server ist sie noch nicht übernommen.",
+  "why": "Damit ist die Korrektur im Spiel bestätigt. Vor der Übernahme bleibt eine Verzerrung des Inventars bei wenigen Fenstergrößen zu klären.",
+  "kind": "fixed",
+  "status": "done",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/38"
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-03",
+  "summary": "Hotbar-Korrektur nach dem Spieltest überarbeitet: Items bleiben laut Test jetzt im Fach, Itemname und Stapelzahlen werden passend versetzt. Noch nicht eingespielt.",
+  "why": "Der Spieltest zeigte, welche Probe vermutlich hilft und dass Itemname und Zahlen noch falsch liegen. So würde die Korrektur den behobenen Fehler nicht zurückbringen.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}
