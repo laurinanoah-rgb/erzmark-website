@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Der Discord-Bot bekommt einen Selbsttest, einen Herzschlag und einen Wächter für Massen-Beitritte",
+  "why": "Ausfälle des Bots fallen früher auf, das Team sieht den Zustand per Befehl. Noch lokal gebaut, nicht eingespielt.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}
