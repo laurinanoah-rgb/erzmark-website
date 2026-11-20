@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "kind": "added",
+  "summary": "Demo (Java): Eigene Kampfmusik für die Kneipenschlägerei mit Grokk. Sie blendet beim Aufwachen im Ring ein, die Tavernenmusik pausiert so lange",
+  "why": "Der Kampf bekommt Tempo und Spannung. Die Musikdatei wurde auf etwa die Hälfte verkleinert, damit das Ressourcenpaket schlank bleibt. Bedrock folgt später",
+  "status": "in_progress",
+  "source": null
+}
