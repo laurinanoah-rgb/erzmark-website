@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-13",
+  "summary": "Testwerkzeug zur Eingabeerkennung für Bedrock-Spieler gebaut, noch nicht installiert",
+  "why": "Es protokolliert nur auf Anforderung, ohne persönliche Daten und mit festen Grenzen. Es soll auf Konsolen zeigen, welche Eingaben nutzbar sind, bevor Einladungen per Tastendruck umgesetzt werden.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}
