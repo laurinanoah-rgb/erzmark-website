@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-20",
+  "kind": "changed",
+  "summary": "Demo: Nach dem Rauswurf aus der Taverne kann man jetzt sofort mit Kutscher Jorun sprechen. Mehrere Dialoge wurden umgeschrieben, damit sie zum neuen Kampfende passen",
+  "why": "Jorun verlangte bisher ein Gespräch mit Mara, das es nicht mehr gibt. Jetzt reicht Maras Ruf beim Rauswurf, und die Gäste reagieren passend darauf",
+  "status": "done",
+  "source": null
+}
