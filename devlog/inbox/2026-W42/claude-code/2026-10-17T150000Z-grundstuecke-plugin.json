@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "kind": "added",
+  "summary": "Das Grundstücks-Plugin ist programmiert: Beanspruchen per Menü (Java und Bedrock), Schutz, Freunde, Sperrliste und Einstellungen",
+  "why": "Erste Stufe des Grundstücks-Systems steht und besteht die Selbsttests; es ist noch nicht auf einem Spielserver, der Test im Spiel steht aus",
+  "status": "in_progress",
+  "source": null
+}
