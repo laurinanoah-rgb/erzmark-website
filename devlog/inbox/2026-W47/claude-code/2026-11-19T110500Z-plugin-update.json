@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-19",
+  "kind": "changed",
+  "summary": "Server-Plugins aktualisiert: neue Fassungen von Scenes, Nexo und Scaffolding auf allen Spielservern eingespielt, vorher auf Verträglichkeit mit unseren eigenen Erweiterungen geprüft",
+  "why": "Aktuelle Fassungen bringen Verbesserungen für Möbel, NPCs und Bedrock. Ein veraltetes NPC-Paket wurde beim Test erkannt, ersetzt und erst danach überall verteilt, damit keine Figuren verschwinden. Die Abnahme im Spiel steht noch aus",
+  "status": "done",
+  "source": null
+}

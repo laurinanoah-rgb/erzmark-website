@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-19",
+  "kind": "added",
+  "summary": "Hauptmenü: Hinter der eigenen Figur ist jetzt die Taverne aus der Demo mit ihrer Einrichtung und ruhig trinkenden, plaudernden Gästen zu sehen, auch für Bedrock-Spieler",
+  "why": "Das Menü wirkt lebendig statt leer. Für Bedrock kommt nur ein kleines Zusatzpaket von gut einem Megabyte dazu, keine Sounds oder Dialoge. Gebäude und Einrichtung entsprechen jetzt der Demo. Die Sichtprüfung im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
