@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "changed",
+  "summary": "Build Studio nutzt jetzt eine eigene, edle Schrift für die Anzeige oben, die Meldungen in der Bildmitte und die Warnungen, passend zum Stil von Erzmark",
+  "why": "Die Bau-Anzeigen sollen hochwertig wirken und gut lesbar sein. Verwendet wird eine freie Schriftart. Auf einem Testserver eingespielt, die Sichtprüfung im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

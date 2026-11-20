@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Build Studio hat jetzt ein eigenes Bau-HUD: eine Leiste oben mit Größe, Drehung, Blickrichtung und Bauzeit, passende Bedienhinweise für Maus, Touch und Controller, kurze Meldungen in der Bildmitte und eine Anleitung beim ersten Start",
+  "why": "Bauen soll ohne Vorwissen verständlich sein. Warnungen zeigen vorher, wenn ein Bauwerk zu groß ist oder in einem geschützten Bereich landen würde, dazu kommen Materialübersicht, Verlauf und ein Raster. Auf einem Testserver eingespielt, der Test im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}

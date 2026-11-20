@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Build Studio kann jetzt kopieren, drehen, einfügen und rückgängig machen: Auswahl kopieren, in 90-Grad-Schritten drehen, mittig auf einen Block einfügen und mit einem Werkzeug wieder rückgängig machen",
+  "why": "Damit wird das Bau-Werkzeug zum ersten Mal wirklich nutzbar. Große Einfügungen müssen bestätigt werden, sehr große Auswahlen werden abgelehnt. Auf einem Testserver eingespielt, Tests im Spiel und eine Vorschau stehen noch aus",
+  "status": "in_progress",
+  "source": null
+}

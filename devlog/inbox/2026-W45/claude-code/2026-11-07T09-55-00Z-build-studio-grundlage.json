@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-07",
+  "kind": "added",
+  "summary": "Neues Bau-Werkzeug Build Studio, erster Baustein: Mit /build wird das Inventar sicher gespeichert und gegen Bau-Werkzeuge getauscht, erneutes /build gibt alles zurück. Punkte für eine Auswahl werden rot oder grün angezeigt",
+  "why": "Bauen soll für Java- und Bedrock-Spieler einfach werden, ohne dass Gegenstände verloren gehen oder doppelt entstehen, auch bei Verbindungsabbruch, Tod oder Serverneustart. Auf einem Testserver eingespielt, Tests im Spiel stehen noch aus; Kopieren und Einfügen folgen",
+  "status": "in_progress",
+  "source": null
+}
