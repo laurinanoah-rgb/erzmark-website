@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Fehleranalyse des Lobby-Servers: Meldungen von Mythic und ModelEngine kosten keine Last",
+  "why": "Die vielen Warnungen entstehen nur beim Start. Spürbare Arbeit entsteht eher, wenn ein Spieler beitritt und viele Chunks verschickt werden. Daraus ergibt sich eine geordnete Liste von Verbesserungen für schnelleren Betrieb und saubere Logs.",
+  "kind": "researched",
+  "status": "done",
+  "source": null
+}

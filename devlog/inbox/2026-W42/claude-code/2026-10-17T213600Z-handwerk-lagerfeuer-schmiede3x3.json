@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Neue Kochstelle als offenes Lagerfeuer mit Topf, größere Rüstungsschmiede ohne Dach",
+  "why": "Beim Kochen fliegen die Zutaten des Rezepts nacheinander in den Topf und werden mit dem Holzlöffel umgerührt. Die Schmiede ist jetzt 3x3 Blöcke groß, aufgeräumter und im dunklen Erzmark-Stil mit Banner, Runenplatte und Erzadern.",
+  "kind": "changed",
+  "status": "in_progress",
+  "source": null
+}

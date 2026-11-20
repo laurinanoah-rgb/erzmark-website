@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Handwerksstationen: ruhigerer Look, Kochstelle mit Partikel-Feuer und Platzier-Vorschau als grünes oder rotes Geisterbild",
+  "why": "Beim Aufstellen sieht man jetzt vorab, wie die Station aussieht und ob der Platz frei ist. Das Platzieren funktioniert zuverlässig. Alles läuft bisher nur auf dem Testserver.",
+  "kind": "added",
+  "status": "done",
+  "source": null
+}

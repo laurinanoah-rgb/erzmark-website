@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Schmelzofen, Gerberei und Webstuhl als neue Handwerks-Stationen im Testbetrieb",
+  "why": "Der Schmelzofen gießt Barren, die Gerberei verwandelt Rohfelle in Leder und der Webstuhl webt ein rotes Banner mit dem Erzmark-Ring. So entstehen die Materialien für Rüstung und Ausrüstung direkt in der Spielwelt.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Testserver auf den Software-Stand des Live-Servers gebracht und Handwerks-Stationen darauf geprüft",
+  "why": "Die Stationen wurden gegen ältere Versionen gebaut. Nach dem Angleichen von Nexo, ModelEngine und Co. laufen sie auch auf dem Live-Stand fehlerfrei an. Das senkt das Risiko für den späteren Einsatz auf dem Spielserver und für Bedrock.",
+  "kind": "changed",
+  "status": "done",
+  "source": null
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Eigenes Item-System für Handwerk: Barren, Leder, Rüstung und Waffen mit echten Werten",
+  "why": "Ohne fremdes Item-Plugin entsteht jetzt eine Kette: Erz wird zu Barren geschmolzen, Felle zu Leder gegerbt, daraus schmieden die Stationen Rüstung und Waffen. Fertige Stücke tragen Seltenheit, Werte und den Namen ihres Herstellers.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-17",
+  "summary": "Schleifstein, Werkzeugwand und Vorratsfass ergänzen die Handwerks-Stationen",
+  "why": "Der Fußschleifstein schärft Klingen mit Funken, an der Werkzeugwand wird ein Werkstück geschmiedet, das Vorratsfass lagert Zutaten. Damit sind alle geplanten Stationen im Testbetrieb vorhanden und bereit für den ersten Spieltest.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

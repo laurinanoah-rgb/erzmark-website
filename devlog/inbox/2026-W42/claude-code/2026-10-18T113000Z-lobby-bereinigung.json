@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-10-18",
+  "summary": "Lobby-Server aufgeräumt: kaputte Fremdpakete, alte Rezepte und nicht passende Plugins entfernt",
+  "why": "Der Start erzeugt jetzt rund ein Drittel weniger Warnungen, und die Fehlermeldung bei jedem Spielerbeitritt entfällt. Alle Dateien sind gesichert und lassen sich zurückholen. Sichtweite und Lastmessung mit Spieler folgen nur nach Freigabe.",
+  "kind": "changed",
+  "status": "done",
+  "source": null
+}
