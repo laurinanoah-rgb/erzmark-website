@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock: Über 200 Demo-Sounds fehlten auf Bedrock, darunter Schläge, Jubel, Grokk und alle Stimmen. Dafür gibt es jetzt ein eigenes Sound-Paket für Bedrock, das automatisch aus dem Java-Paket erzeugt wird.",
+  "why": "Das Bedrock-Paket entstand nur aus dem Lobby-Paket, dort fehlen die Demo-Sounds. Die erste Fassung ließ Bedrock-Spieler nicht in die Demo, weil die Versionsnummer zu groß war. Sie wurde sofort zurückgenommen, die korrigierte Fassung wartet auf einen Test.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}

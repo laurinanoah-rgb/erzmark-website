@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock: Das Aufwachen am Demo-Anfang läuft jetzt wie auf Java mit Lidern, Kamera, Gedanken und Musik. Die Kamera nach dem Kampfring-Auftakt wird zuverlässig freigegeben, und das Sound-Paket ist für Konsolen auf 4,2 MB verkleinert.",
+  "why": "Auf Bedrock blieb die Kamera nach dem Ring stehen, während die Figur weiterlief. Das Aufwachen lief nur als einfacher Ersatz, und es fehlten die Sounds. Eingespielt, der Test auf einem Gerät steht noch aus.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}

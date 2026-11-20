@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-17",
+  "summary": "Demo: Grokks Faustschlag in der Taverne ist neu inszeniert. Er packt dich am Kragen, holt weit zur Seite aus und schlägt dir sichtbar ins Gesicht, erst danach folgt der K.o.-Effekt. Dafür gibt es eine neue Schlag-Animation und eine Kamera, die genau dorthin geführt wird, wo die Faust ankommt.",
+  "why": "Bisher endete die Faust zu weit vor der Kamera und holte hinter dem Rücken aus, so dass man den Schlag gar nicht sah. Der Auftakt des Kampfs soll verständlich und wuchtig wirken. Die Änderung läuft zunächst nur auf dem Entwicklungsserver und wartet auf den Spieltest.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Demo auf Bedrock: Die Gäste, Musiker und die Wirtin in der Taverne sind jetzt auch für Bedrock-Spieler sichtbar. Außerdem werden Profilkarte und Aufgabenanzeige auf Bedrock wieder befüllt. Ein Update eines Zusatzprogramms hatte die Anzeige still unterbrochen.",
+  "why": "Bedrock-Spieler sahen eine leere Taverne ohne Hinweise, was der nächste Schritt ist. Beides ist eingespielt, der Test auf einem Bedrock-Gerät steht noch aus.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}

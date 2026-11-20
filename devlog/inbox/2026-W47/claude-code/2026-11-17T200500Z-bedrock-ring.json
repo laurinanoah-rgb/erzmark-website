@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-17",
+  "summary": "Demo auf Bedrock: Der Auftakt des Kampfs gegen Grokk bekommt eine echte Kamerafahrt. Grokk zieht dich heran und schlägt zu, du siehst einen roten Blitz und die Kamera wackelt, dann wird es schwarz und du wachst im Kreis der jubelnden Gäste auf. Bisher sahen Bedrock-Spieler an dieser Stelle nur eine Blindheit.",
+  "why": "Bedrock-Spieler sollen dieselbe Szene erleben wie Java-Spieler. Die Kamera wird dafür über den Proxy gesteuert. Die Szene läuft zunächst nur auf dem Entwicklungsserver und muss noch auf einem Bedrock-Gerät getestet werden.",
+  "kind": "added",
+  "status": "in_progress",
+  "source": null
+}

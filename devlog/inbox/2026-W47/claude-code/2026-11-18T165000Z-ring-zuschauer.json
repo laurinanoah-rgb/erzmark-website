@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Demo: Die Zuschauer im Kampfring gegen Grokk haben jetzt feste Rollen. Manche klatschen, andere jubeln oder recken die Faust. Sie schauen zur Ringmitte und reagieren als Welle auf Treffer und Ausweichen.",
+  "why": "Bisher wechselten alle Gäste ständig zufällig die Bewegung, das wirkte unruhig statt nach einem echten Kampf. Jetzt in der Demo eingespielt, der Spieltest steht noch aus.",
+  "kind": "changed",
+  "status": "in_progress",
+  "source": null
+}

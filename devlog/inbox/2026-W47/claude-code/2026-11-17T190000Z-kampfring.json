@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-17",
+  "summary": "Demo: Im Faustkampf gegen Grokk wird man nicht mehr ständig hin und her geschubst. Der Rand des Zuschauerkreises fängt einen jetzt sanft ab, Ausweichen rutscht am Rand entlang statt in die Menge, Grokk bleibt im Kreis und nach einer Niederlage geht es ohne erneute Zwischensequenz direkt weiter.",
+  "why": "Der Kampfplatz in der Taverne ist schmal, dadurch löste fast jedes Ausweichen einen Rückstoß der Menge aus. Der Kampf soll sich fair und flüssig anfühlen. Die Änderung läuft zunächst nur auf dem Entwicklungsserver und wartet auf den Spieltest.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}

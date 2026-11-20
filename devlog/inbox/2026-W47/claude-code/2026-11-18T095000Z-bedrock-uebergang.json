@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-18",
+  "summary": "Bedrock: Wer einen neuen Spielstand anlegt, sollte wieder ohne Fehlermeldung in die Demo wechseln können. Bisher blieben neue Bedrock-Spielstände nach der Charaktererstellung mit dem Hinweis hängen, der Übergang habe nicht gestartet werden können.",
+  "why": "Der Wechsel suchte die Bedrock-Verbindung über eine Kennung, die sich beim Anlegen eines neuen Spielstands ändert. Jetzt wird die Verbindung auch auf anderem Weg gefunden. Die Änderung ist eingespielt, der Test mit einem neuen Spielstand steht noch aus.",
+  "kind": "fixed",
+  "status": "in_progress",
+  "source": null
+}
