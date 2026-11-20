@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Eine bestehende Sicherung unabhängig ausgelagert und vollständig auf Übereinstimmung geprüft.", "why": "Nach geprüfter Auslagerung wurde die freigegebene ursprüngliche Kopie entfernt. Dadurch wurden weitere rund 15 GB frei. Die Speicherlage bleibt knapp.", "status": "done", "source": null}

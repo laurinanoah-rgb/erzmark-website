@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Die Menüschrift wird im Spiel wieder korrekt dargestellt. Der aktuelle Gestaltungsdurchgang für die Java-Hotbar ist abgeschlossen.", "why": "Die verzerrten Buchstaben sind beim erneuten Sichttest verschwunden.", "status": "done", "source": null}

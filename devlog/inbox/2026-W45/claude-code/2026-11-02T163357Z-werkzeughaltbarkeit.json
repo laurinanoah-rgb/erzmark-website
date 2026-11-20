@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Der Haltbarkeitsbalken der Eisenspitzhacke sitzt im Java-Hotbartest direkt unter dem Werkzeug.", "why": "Die Anzeige blieb bisher am unteren Bildschirmrand. Ein Spieltest bestätigt die Position im Slot auch bei gewechselter Auswahl.", "status": "in_progress", "source": null}

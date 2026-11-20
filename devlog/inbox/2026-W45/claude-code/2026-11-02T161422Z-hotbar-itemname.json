@@ -1,0 +1,1 @@
+{"schema_version": 1, "agent": "claude-code", "date": "2026-11-02", "summary": "Eine Anpassung für den kurz eingeblendeten Itemnamen wurde im Java-Testpaket eingebaut.", "why": "Beim Slotwechsel verdeckte der Name das ausgewählte Item. Die neue Position über dem Rahmen wird im Spiel geprüft.", "status": "in_progress", "source": null}
