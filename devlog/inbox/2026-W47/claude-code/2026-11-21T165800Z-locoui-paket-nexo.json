@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-21",
+  "kind": "fixed",
+  "summary": "Testserver: Das Ressourcenpaket der neuen Oberflächen-Engine kommt jetzt bei Spielern an. Nexo wurde aktualisiert, ein Shader-Konflikt mit Nexo wurde umgangen",
+  "why": "Ohne das Paket zeigt die Engine nur leere Kästchen. Nexo und die Engine liefern nun je ein eigenes Paket aus. Der Shader-Konflikt geht als Fehlermeldung an den Hersteller; Spieltest und Bedrock folgen",
+  "status": "in_progress",
+  "source": null
+}
