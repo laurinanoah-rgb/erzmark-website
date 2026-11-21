@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-21",
+  "kind": "added",
+  "summary": "Neue Oberflächen-Engine LocoUI auf dem Testserver installiert: Menüs und HUD-Anzeigen lassen sich damit über einen Web-Editor gestalten, für Java und Bedrock",
+  "why": "Damit können wir Menüs und Anzeigen schneller und einheitlicher bauen. Der Server startet sauber mit dem Plugin; der Praxistest im Spiel und die Abstimmung mit unseren bestehenden HUDs stehen noch aus",
+  "status": "in_progress",
+  "source": null
+}
