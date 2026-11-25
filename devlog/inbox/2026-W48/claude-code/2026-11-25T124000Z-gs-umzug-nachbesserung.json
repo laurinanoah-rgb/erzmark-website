@@ -3,8 +3,8 @@
   "agent": "claude-code",
   "date": "2026-11-25",
   "kind": "fixed",
-  "summary": "Grundstücke: Nachbesserung für den Umzug vorbereitet, darunter ein Fehler, bei dem ein Umzug knapp neben das alte Grundstück Gebautes überschreiben konnte",
-  "why": "Umzüge auf überlappende Plätze sind jetzt gesperrt, Tiere und Möbel werden am Ziel nachgezählt und die Rückgabe der Hotbar ist auch nach einem Absturz sicher. Die neue Version ist gebaut und geprüft, aber noch nicht auf dem Testserver eingespielt",
+  "summary": "Grundstücke: Nachbesserung für den Umzug auf dem Testserver eingespielt, darunter ein Fehler, bei dem ein Umzug knapp neben das alte Grundstück Gebautes überschreiben konnte",
+  "why": "Umzüge auf überlappende Plätze sind jetzt gesperrt, Tiere und Möbel werden am Ziel nachgezählt und die Rückgabe der Hotbar ist auch nach einem Absturz sicher. Die neue Version läuft auf dem Testserver, der Spieltest steht noch aus",
   "status": "in_progress",
   "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
 }
