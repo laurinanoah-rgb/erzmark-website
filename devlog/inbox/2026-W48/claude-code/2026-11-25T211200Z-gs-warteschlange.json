@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "improved",
+  "summary": "Grundstücke: Umzüge und Löschungen stellen sich jetzt in eine kurze Warteschlange, wenn schon zwei laufen; dazu eine neue Spieltest-Liste für den Owner",
+  "why": "Mehrere gleichzeitige Löschungen ließen den Testserver kurz hängen. Mit der Warteschlange sank die längste Verzögerung von 225 auf 25 Millisekunden, wartende Spieler bekommen eine Meldung. Der Test mit echten Spielern steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
+}
