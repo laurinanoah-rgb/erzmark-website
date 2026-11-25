@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Grundstücke: Platziermodus und Schutz geprüft, mehrere Umzüge und Löschungen gleichzeitig getestet; dabei fünf Lücken geschlossen und bei den Handwerks-Stationen unsichtbare Hilfsobjekte behoben, die sich beim Laden vermehrten",
+  "why": "Zwei Umzüge können nicht mehr auf dieselbe Fläche zielen, die Hotbar übersteht Abstürze ohne Verlust oder Verdopplung, und gebannte Spieler bleiben nicht mehr in einem Grundstück hängen. Drei Umzüge gleichzeitig liefen sauber in unter zwei Sekunden. Der Test mit echten Spielern steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
+}
