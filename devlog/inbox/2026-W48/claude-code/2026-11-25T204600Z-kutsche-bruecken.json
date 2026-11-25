@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "researched",
+  "summary": "Kutschen-Schnellreise: Die Stellen, an denen die Kutschenstrecken über Wasser führen, sind mit Koordinaten, Längen und Kartenausschnitten aufgelistet. Es sind zehn, davon sieben für eine Brücke",
+  "why": "Damit Brücken gezielt gebaut werden können. Danach lassen sich die Strecken neu berechnen, sodass die Kutsche über die Brücken fährt",
+  "status": "done",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}
