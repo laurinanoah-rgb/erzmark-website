@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "researched",
+  "summary": "Kutschen-Schnellreise: Strecken zwischen allen vorgeschlagenen Haltestellen aus einer Kopie der Inselkarte berechnet. 18 Strecken bevorzugen Straßen und meiden Lava, Wasser und Steilhänge, dazu eine Übersichtskarte mit Fahrzeiten",
+  "why": "Die sichtbare Kutschenfahrt braucht echte Wege statt Luftlinie. Vier Strecken queren Wasser und brauchen dort noch eine Brücke oder einen anderen Weg. Vorschlag, im Spiel ungeprüft",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}

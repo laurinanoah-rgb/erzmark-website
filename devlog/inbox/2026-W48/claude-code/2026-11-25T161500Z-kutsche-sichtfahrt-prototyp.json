@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "added",
+  "summary": "Kutschen-Schnellreise: Prototyp für die sichtbare Fahrt gebaut. Die Kutsche fährt die Strecke ab, hält für wartende Spieler, und wer überspringt oder aussteigt, lässt eine Figur mit seinem Skin bis zum nächsten Halt sitzen. Dazu Haltestellen-Schilder für 14 neue Orte",
+  "why": "Gemeinsame Fahrten sollen wie eine echte Kutschenlinie wirken. Die offenen Gestaltungsfragen sind als Schalter umgesetzt. Nur gebaut und mit Selbsttests geprüft, noch nicht auf dem Testserver",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}
