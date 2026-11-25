@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "changed",
+  "summary": "Kutschen-Schnellreise: Prototyp der sichtbaren Fahrt mit Zusteigen und mitreisender Figur auf dem Testserver eingespielt. Normale Fahrten bleiben vorerst eine Überblendung, die sichtbare Fahrt lässt sich als Testfahrt starten",
+  "why": "So können Fahrgefühl, Sitzplätze und das Aussteigen der Figur im Spiel geprüft werden, bevor die Funktion für alle eingeschaltet wird. Der Server startete sauber, der Spieltest steht aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}
