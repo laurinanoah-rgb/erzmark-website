@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Grundstücke: Umzug-Code geprüft und auf dem Testserver nachgetestet, dabei eine mögliche doppelte Rückerstattung, einen doppelten Grenzstein und mitkopierte unsichtbare Hilfsobjekte behoben",
+  "why": "Auch ein Absturz im letzten Schritt eines Umzugs ist jetzt geprüft: nichts wird verdoppelt, Geld wird höchstens einmal erstattet, und die Kochstelle zeigt ihre Animation nach dem Umzug sofort. Der Test mit echten Spielern steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
+}

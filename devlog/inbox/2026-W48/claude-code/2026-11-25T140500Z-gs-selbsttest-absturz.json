@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Grundstücke: Umzug und Löschen auf dem Testserver mit simulierten Serverabstürzen geprüft und dabei vier Fehler gefunden und behoben",
+  "why": "Nach einem Absturz mitten im Umzug wird jetzt nachweislich nichts verdoppelt und nichts geht verloren, auch große Grundstücke ziehen ohne spürbaren Lag um. Der Test mit echten Spielern steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
+}

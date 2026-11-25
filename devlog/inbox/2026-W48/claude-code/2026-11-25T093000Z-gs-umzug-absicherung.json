@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Grundstücke: Umziehen und Zurücksetzen auf dem Testserver abgesichert, damit keine Gegenstände oder Tiere verdoppelt werden oder verloren gehen",
+  "why": "Ein Umzug läuft jetzt Schritt für Schritt mit Sperre und Prüfung und wird auch nach einem Serverabsturz sauber abgeschlossen. Zusätzlich sind mehrere Schutzlücken an Grundstücksgrenzen geschlossen. Der Spieltest steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/52"
+}

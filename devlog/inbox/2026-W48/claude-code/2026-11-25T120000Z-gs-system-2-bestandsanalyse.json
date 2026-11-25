@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "researched",
+  "summary": "Grundstückssystem 2.0: Bestandsaufnahme des vorhandenen Grundstückssystems auf dem Testserver abgeschlossen, Ausbauplan mit Clan-Grundstücken erstellt",
+  "why": "Bevor Clan-Anwesen, Umzüge und Wohnfunktionen dazukommen, muss das Fundament sicher sein. Gefunden wurden Schwachstellen beim Umziehen von Grundstücken, die zuerst behoben werden. Die Umsetzung startet nach Freigabe",
+  "status": "in_progress",
+  "source": null
+}
