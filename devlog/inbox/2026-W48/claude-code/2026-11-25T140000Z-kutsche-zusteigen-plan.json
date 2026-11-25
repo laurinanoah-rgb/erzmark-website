@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "researched",
+  "summary": "Kutschen-Schnellreise: Testfahrten ausgewertet und neue Idee eingeplant – die Kutsche hält unterwegs für wartende Spieler, und wer die Reise überspringt, bleibt als sitzende Figur bis zur nächsten Haltestelle sichtbar",
+  "why": "Die Tests zeigten Stolpersteine (Haltestellen schwer zu finden, fehlende Hinweise im Menü, zu lange Wartezeit zwischen Fahrten). Die geplante Mitfahr-Idee macht gemeinsame Reisen glaubwürdiger. Noch nichts davon gebaut",
+  "status": "in_progress",
+  "source": null
+}

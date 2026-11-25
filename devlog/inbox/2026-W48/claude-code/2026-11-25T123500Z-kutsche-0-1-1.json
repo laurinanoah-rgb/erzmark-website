@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Kutschen-Schnellreise 0.1.1 auf dem Testserver: Haltestellen übernehmen ihren Ort vom aufgestellten Modell, das Menü zeigt die nächste bekannte Haltestelle und warum eine Fahrt gerade nicht geht, sichere Ankunftsorte, kürzere Wartezeit",
+  "why": "In den Testfahrten fanden Mitspieler keine Haltestelle und bekamen keinen Hinweis. Die Version läuft jetzt auf dem Testserver, der Spieltest steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}

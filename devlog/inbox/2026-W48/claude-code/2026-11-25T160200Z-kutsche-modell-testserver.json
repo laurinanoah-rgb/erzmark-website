@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "changed",
+  "summary": "Kutschen-Schnellreise: Das Kutschenmodell aus der Demo ist jetzt auch auf dem Testserver, damit die Testfahrt mit Gespann statt nur mit sitzenden Figuren zu sehen ist",
+  "why": "Ohne Modell ließ sich nicht beurteilen, wie die Fahrt wirkt. Das Ressourcenpaket des Testservers wurde neu gebaut, ein Spieltest steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}

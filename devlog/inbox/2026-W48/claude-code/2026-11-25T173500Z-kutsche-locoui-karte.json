@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "added",
+  "summary": "Kutschen-Schnellreise: Neue Kutschenkarte als modernes Bildschirm-Menü mit Inselkarte, Strecken, entdeckten und unbekannten Haltestellen und dem eigenen Standort. Auf dem Testserver sind dazu 14 neue Haltestellen und die sichtbare Fahrt für Java aktiv",
+  "why": "Spieler sollen ihr Ziel direkt auf der Karte wählen und die Fahrt ansehen können. Bedrock-Spieler behalten vorerst das einfache Menü und die Überblendung. Die Ortsnamen sind noch Arbeitsnamen, der Spieltest steht aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}

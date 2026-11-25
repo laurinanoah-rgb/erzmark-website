@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-25",
+  "kind": "fixed",
+  "summary": "Kutschen-Schnellreise: Die Testfahrt wirkte steif. Sie nutzt jetzt dieselbe Technik wie die Kutsche der Demo, mit beweglichem Gespann, federndem Wagen, laufenden Pferden, drehenden Rädern und weichen Kurven",
+  "why": "Der Owner hatte beim Test bemerkt, dass die Fahrt nicht so flüssig aussieht wie in der Demo. Die neue Fassung läuft auf dem Testserver, die erneute Abnahme im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": "https://github.com/laurinanoah-rgb/erzmark-website/pull/53"
+}
