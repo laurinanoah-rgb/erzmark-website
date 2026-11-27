@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Briefarchiv vorbereitet: Nach einer Antwort verschwindet der Brief aus Discord, und alle Briefe der Figuren lassen sich auf erzmark.de unter Briefe wieder lesen",
+  "why": "Der Discord-Kanal bleibt aufgeräumt, ohne dass ein Brief verloren geht. Gebaut und getestet, aber noch nicht eingespielt",
+  "status": "in_progress",
+  "source": null
+}
