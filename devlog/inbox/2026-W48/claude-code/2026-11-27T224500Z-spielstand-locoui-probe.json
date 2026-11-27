@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Probe auf dem Testserver: Spielstand-Menü als Vollbildseite mit LocoUI, mit Spielstandkarten, drehbarer Figur im eigenen Skin und einer Anzeige, wie weit man in der Demo ist",
+  "why": "Der Owner wollte sehen, ob das Menü mit LocoUI schöner wird als mit Truhenfenstern. Die Probe liest Spielstände nur, Klicks ändern nichts. Der Test im Spiel steht noch aus",
+  "status": "in_progress",
+  "source": null
+}
