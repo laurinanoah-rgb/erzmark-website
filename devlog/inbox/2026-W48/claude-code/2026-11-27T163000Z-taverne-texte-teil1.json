@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "changed",
+  "summary": "Texte der Demo-Taverne Szene für Szene mit dem Owner überarbeitet und abgenommen: Aufwachen, Edran, Gäste, Grokk-Kampf, Rauswurf und Kutschfahrt. Kürzere Sätze, Widersprüche entfernt, Kampftipp passt zur echten Steuerung",
+  "why": "Die Demo soll sich von Anfang bis Ende rund lesen und spielen. Die Taverne ist der erste Eindruck; die Texte sind jetzt fest, Englisch, Stimmen und das Einspielen folgen später",
+  "status": "in_progress",
+  "source": null
+}
