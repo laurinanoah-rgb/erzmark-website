@@ -4,7 +4,7 @@
   "date": "2026-11-27",
   "kind": "added",
   "summary": "Briefe aus Stillbach für den Discord-Bot gebaut: Wer drei Tage nicht spielt, bekommt einen versiegelten Umschlag von Edran oder Mara; nach dem Öffnen erscheint der Brief an den eigenen Spielstand mit Antwortmöglichkeiten",
-  "why": "Die Figuren sollen sich persönlich melden und sich beim nächsten Besuch im Spiel daran erinnern, ob der Brief gelesen oder beantwortet wurde. Auch viele Briefe gleichzeitig gehen ohne Wartezeit raus. Fertig gebaut und getestet, aber noch nicht auf dem Server eingespielt",
+  "why": "Die Figuren sollen sich persönlich melden und sich beim nächsten Besuch im Spiel daran erinnern, ob der Brief gelesen oder beantwortet wurde. Gelöschte Spielstände bekommen keine Briefe. Läuft seit heute im Testbetrieb mit einem Testkonto, für alle Spieler noch nicht freigeschaltet",
   "status": "in_progress",
   "source": null
 }
