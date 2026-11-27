@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Namenseingabe in der Demo gebaut: Der Spieler bleibt am Tisch sitzen, bis er dem Chronisten einen gültigen Namen genannt hat. Eine Prüfung sperrt unpassende Namen, Namen bekannter Figuren bekommen eigene Antworten, und der Spielstand übernimmt den Namen danach",
+  "why": "Der Name wird Teil der Geschichte und kann nicht mehr übersprungen werden. Ohne Namen entsteht kein Spielstand. Alles ist nur gebaut und geprüft, nicht eingespielt; zwei Gestaltungsfragen liegen beim Owner",
+  "status": "in_progress",
+  "source": null
+}
