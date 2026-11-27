@@ -3,7 +3,7 @@
   "agent": "claude-code",
   "date": "2026-11-27",
   "kind": "changed",
-  "summary": "Spielstände im Discord-Profil sind jetzt nach Plattform getrennt: ein Abschnitt für Java und einer für Bedrock",
+  "summary": "Spielstände im Discord-Profil sind jetzt nach Plattform getrennt: ein farbiger Trennstrich für Java und einer für Bedrock, die Karten tragen die Farbe ihrer Plattform",
   "why": "Wer mit Java- und Bedrock-Konto spielt, sieht sofort, welcher Spielstand wohin gehört. Offene Briefe bleiben beim Umsortieren erhalten. Läuft im Testbetrieb mit einem Testkonto",
   "status": "in_progress",
   "source": null
