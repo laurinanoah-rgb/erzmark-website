@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Wer im Discord-Profil noch keine Spielstände sieht, bekommt jetzt eine Checkliste, was fehlt: Discord mit erzmark.de verbinden, Minecraft verknüpfen, ersten Spielstand anlegen",
+  "why": "So weiß jeder sofort, was noch zu tun ist, und ein Knopf führt direkt zum nächsten Schritt. Sobald der erste Spielstand da ist, erscheinen die Spielstände automatisch",
+  "status": "done",
+  "source": null
+}

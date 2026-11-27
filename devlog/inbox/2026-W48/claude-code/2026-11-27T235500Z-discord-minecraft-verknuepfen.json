@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Minecraft lässt sich jetzt direkt in Discord verknüpfen: Knopf im Profilkanal, Minecraft-Namen eingeben, beim nächsten Betreten des Servers im Spiel mit Ja bestätigen. Funktioniert für Java und Bedrock, ein Website-Konto ist dafür nicht mehr nötig",
+  "why": "Der Weg über die Website war für manche Spieler zu umständlich. Die Bestätigung im Spiel stellt sicher, dass niemand ein fremdes Minecraft-Konto übernimmt. Der vollständige Ablauf im Spiel wird noch getestet",
+  "status": "in_progress",
+  "source": null
+}

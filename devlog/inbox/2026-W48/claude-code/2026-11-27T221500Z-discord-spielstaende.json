@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Spielstände im Discord-Profil gebaut: Im privaten Profilkanal steht ein Abschnitt Spielstände, darunter pro Spielstand eine Karte mit eigenem Thread für Statistiken und Briefe",
+  "why": "Spieler sehen Level, Spielzeit und Story-Fortschritt jedes Spielstands direkt in Discord, und Briefe der Figuren landen beim richtigen Spielstand. Läuft seit heute im Testbetrieb mit einem Testkonto",
+  "status": "in_progress",
+  "source": null
+}
