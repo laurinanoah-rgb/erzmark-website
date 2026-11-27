@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "researched",
+  "summary": "Neue Ideen für den Discord-Bot geplant: Briefe von Story-Figuren nach längerer Pause, Live-Zahl im Tavernen-Sprachkanal, Server-Optik je Event und Spielstände im persönlichen Discord-Profil",
+  "why": "Discord soll sich wie ein Teil der Welt anfühlen: Figuren melden sich persönlich und erinnern sich im Spiel daran, Events sind auch auf dem Server sichtbar, und Spielstände lassen sich direkt im eigenen Profil ansehen. Bisher nur Konzept, noch nichts gebaut",
+  "status": "in_progress",
+  "source": null
+}
