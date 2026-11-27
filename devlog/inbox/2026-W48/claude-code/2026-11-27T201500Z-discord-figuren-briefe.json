@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Briefe aus Stillbach für den Discord-Bot gebaut: Wer drei Tage nicht spielt, bekommt einen versiegelten Brief von Edran oder Mara, adressiert an den eigenen Spielstand, mit Antwortmöglichkeiten",
+  "why": "Die Figuren sollen sich persönlich melden und sich beim nächsten Besuch im Spiel daran erinnern, ob der Brief gelesen oder beantwortet wurde. Fertig gebaut und getestet, aber noch nicht auf dem Server eingespielt",
+  "status": "in_progress",
+  "source": null
+}
