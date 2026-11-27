@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "researched",
+  "summary": "Demo-Taverne auf Spielbarkeit geprüft: Ablauf, Gesprächslängen und Vertonung vom Aufwachen bis zur Kutsche ausgewertet, Schwachstellen und eine Reihenfolge für die Überarbeitung festgehalten",
+  "why": "Die Taverne wird als Nächstes überarbeitet. Einzelne Szenen sind abgenommen, der Gesamtablauf aber noch nie am Stück gespielt; gefunden wurden u. a. ein Satzbruch im Einstiegsgespräch und einige stumme Dialogseiten",
+  "status": "in_progress",
+  "source": null
+}
