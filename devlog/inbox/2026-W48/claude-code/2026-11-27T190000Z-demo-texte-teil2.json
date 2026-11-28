@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "changed",
+  "summary": "Demo-Texte Teil 2 überarbeitet und abgenommen: Stadttor, Schwert, Vision, Edrans Zimmer, Zuhause, Keller und Rückkehr. Reste einer älteren Figurenfassung im Haus korrigiert, eine doppelte Zeile gestrichen, englische Gegenstücke ergänzt",
+  "why": "Damit sind die Texte der Demo von Anfang bis Ende einheitlich. Alles liegt als Paket bereit; eingespielt wird erst nach Freigabe, Stimmen und die übrige englische Fassung folgen später",
+  "status": "in_progress",
+  "source": null
+}

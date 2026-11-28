@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "changed",
+  "summary": "Die abgenommenen Taverne-Texte sind in die Dialog- und Story-Dateien der Demo übertragen und als Paket vorbereitet. Zwei kleine Werkzeuge führen neue Texte mit Geräuschen und Stimmen des Live-Stands zusammen, ohne Abläufe zu verändern",
+  "why": "So landet beim späteren Einspielen genau der Text aus dem Drehbuch im Spiel. Prüfung ergab: die meisten Sätze sind neu, daher fehlen für viele Seiten noch Stimmen. Eingespielt ist noch nichts",
+  "status": "in_progress",
+  "source": null
+}

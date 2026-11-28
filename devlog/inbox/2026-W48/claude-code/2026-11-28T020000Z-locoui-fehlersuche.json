@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-28",
+  "kind": "changed",
+  "summary": "LocoUI-Probe auf dem Testserver: Das Spielstand-Menü erscheint jetzt, nachdem andere HUD-Bossleisten Platz gemacht haben. Ein Schriftfehler bleibt: Texte nur aus einfachen Buchstaben werden riesig dargestellt",
+  "why": "Mit Testseiten eingegrenzt: Es liegt weder am Spieler-Client noch an einzelnen Plugins allein. Als Nächstes wird ein eigener kleiner Testserver Schritt für Schritt aufgebaut, um die Ursache zu finden",
+  "status": "in_progress",
+  "source": null
+}

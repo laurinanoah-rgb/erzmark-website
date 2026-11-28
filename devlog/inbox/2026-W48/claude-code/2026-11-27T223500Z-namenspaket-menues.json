@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "changed",
+  "summary": "Namenspaket: Auch das Bedrock-Menü und der Launcher legen einen neuen Spielstand jetzt ohne Namensabfrage als Namenlos an, der Name kommt aus der Demo. Namen bis acht Zeichen. Gebaut, Einspiel-Skript vorbereitet",
+  "why": "So gibt es nur noch einen Weg zum Namen: das Gespräch mit Edran in der Demo. Noch nicht eingespielt, das passiert erst nach Freigabe und zusammen mit dem Demo-Teil",
+  "status": "in_progress",
+  "source": null
+}

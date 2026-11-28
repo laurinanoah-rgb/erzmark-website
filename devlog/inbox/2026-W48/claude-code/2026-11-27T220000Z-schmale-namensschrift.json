@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "added",
+  "summary": "Schmale Pixelschrift für lange Spielstand-Namen gezeichnet: Namen mit bis zu acht Buchstaben passen jetzt vollständig auf das Namensschild im Spielstand-Menü, kurze Namen behalten die normale Schrift",
+  "why": "Bisher passten nur etwa fünf Buchstaben auf das Schild. Mit der Namenseingabe in der Demo sind bis zu acht erlaubt. Gebaut und in einer Vorschau geprüft, noch nicht eingespielt",
+  "status": "in_progress",
+  "source": null
+}

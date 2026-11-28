@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "changed",
+  "summary": "Englische Fassung der Demo an die überarbeiteten deutschen Texte angeglichen: Dialoge der Taverne und des Stadttors, Hinweise, Rufe und Erzähltexte. Eine Lücke im Vorbereitungswerkzeug gefunden und behoben",
+  "why": "Englische Spieler sollen dieselbe Geschichte in derselben Fassung erleben und keine deutschen Zeilen zwischendurch sehen. Das Paket ist vorbereitet, eingespielt wird erst nach Freigabe",
+  "status": "in_progress",
+  "source": null
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "agent": "claude-code",
+  "date": "2026-11-27",
+  "kind": "researched",
+  "summary": "Plan für die Namenseingabe in der Demo erstellt: Der Spieler nennt seinen Namen dem Chronisten, der Name wird danach als Spielstand-Name übernommen. Länge passend zur Spielstand-Anzeige gemessen, mit Sperrliste für unpassende Namen und kleinen Reaktionen auf Namen bekannter Figuren",
+  "why": "Der Name soll Teil der Geschichte sein statt eines Formulars vorab. Unpassende Namen dürfen nicht durchkommen. Gebaut wird erst nach den Entscheidungen des Owners",
+  "status": "in_progress",
+  "source": null
+}
